@@ -58,8 +58,8 @@ const About = () => {
             <ul className="list-disc pl-5 text-gray-600 mb-6">
               <li>Certificado Google UX Design (Coursera.org) – 174 horas</li>
               <li>Certificação GA4 - Google Analytics – 30 horas</li>
-              <li>Certificação em Ads Digital (Consultoria 7) – Facebook e Google Ads (30 horas)</li>
-              <li>Front-end Developer (DIO) – HTML, CSS e JavaScript (102 horas)</li>
+              <li>Certificação em Ads Digital (Consultoria 7) – Facebook e Google Ads – 30 horas</li>
+              <li>Front-end Developer (DIO) – HTML, CSS e JavaScript – 102 horas</li>
             </ul>
             <p className="text-gray-600 mb-8">
               Essa formação multidisciplinar permite que eu una criatividade, tecnologia e análise de dados para criar soluções digitais eficientes e centradas no usuário.

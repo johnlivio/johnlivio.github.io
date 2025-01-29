@@ -41,7 +41,7 @@ const About = () => {
 
           <div className="relative">
             <img
-              src="../../imagens/yo.jpg"
+              src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/yo.jpg"
               alt="Professional workspace"
               className="rounded-lg shadow-lg filter grayscale"
             />

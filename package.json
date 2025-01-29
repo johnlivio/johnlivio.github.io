@@ -1,13 +1,17 @@
 {
-  "name": "vite-react-typescript-starter",
+  "homepage": "https://johnlivio.github.io/",
+  "name": "johnlivio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "john",
+    "build": "john build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "john preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+
   },
   "dependencies": {
     "lucide-react": "^0.344.0",

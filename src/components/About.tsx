@@ -43,7 +43,7 @@ const About = () => {
             <img
               src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/yo.jpg?raw=true"
               alt="Professional workspace"
-              className="rounded-lg shadow-lg filter grayscale"
+              className="rounded-lg shadow-m filter grayscale"
             />
           </div>
         </div>

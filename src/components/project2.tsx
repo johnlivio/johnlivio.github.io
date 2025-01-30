@@ -25,7 +25,7 @@ const Project2 = () => {
                   </p>
                   <div className="relative flex justify-center p-6">
                     <img
-                      src="imagens\diagrama-perfil.png?raw=true?auto=format&fit=crop&q=80"
+                      src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/diagrama-perfil.png?raw=true?auto=format&fit=crop&q=80"
                       alt="Professional workspace"
                       className="w-[664.5px] h-[100px] mb-12"
                     />
@@ -39,7 +39,7 @@ const Project2 = () => {
 
                   <div className="relative flex justify-center p-6">
                     <img
-                      src="imagens\perfil.png?raw=true?auto=format&fit=crop&q=80"
+                      src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/perfil.png?raw=true?auto=format&fit=crop&q=80"
                       alt="Professional workspace"
                       className="mb-12"
                     />
@@ -54,7 +54,7 @@ const Project2 = () => {
                 
                   <div className="relative flex justify-center p-6">
                     <img
-                      src="imagens\perfil2.png?raw=true?auto=format&fit=crop&q=80"
+                      src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/perfil2.png?raw=true?auto=format&fit=crop&q=80"
                       alt="Professional workspace"
                       className="mb-12"
                     />
@@ -67,7 +67,7 @@ const Project2 = () => {
                   </p>
                   <div className="relative flex justify-center p-6">
                     <img
-                      src="imagens\perfil3.png?raw=true?auto=format&fit=crop&q=80"
+                      src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/perfil3.png?raw=true?auto=format&fit=crop&q=80"
                       alt="Professional workspace"
                       className="mb-12"
                     />

@@ -25,7 +25,7 @@ const Project3 = () => {
                   </p>
                   <div className="relative flex justify-center p-6">
                     <img
-                      src="imagens\conceito.png?raw=true?auto=format&fit=crop&q=80"
+                      src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/conceito.png?raw=true?auto=format&fit=crop&q=80"
                       alt="Professional workspace"
                       className="mb-12"
                     />
@@ -35,7 +35,7 @@ const Project3 = () => {
                   <h2 className="text-3xl font-bold m-2 text-center">Wireframing</h2>
                   <div className="relative flex justify-center p-6">
                     <img
-                      src="imagens\conceito-wireframe.png?raw=true?"
+                      src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/conceito-wireframe.png?raw=true?"
                       alt="Professional workspace"
                       className="mb-12"
                     />
@@ -45,7 +45,7 @@ const Project3 = () => {
                   <h2 className="text-3xl font-bold m-2 text-center">Designs</h2>
                   <div className="relative flex justify-center p-6">
                   <img
-                      src="imagens\conceito-design.png?raw=true?"
+                      src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/conceito-design.png?raw=true?"
                       alt="Professional workspace"
                       className="mb-12"
                     />

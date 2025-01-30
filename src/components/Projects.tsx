@@ -3,19 +3,19 @@ const Projects = () => {
     {
       title: 'Disparador de Listas Personalizada',
       category: 'UX/UI Design',
-      image: 'imagens/mockup-listas.jpg?auto=format&fit=crop&q=80',
+      image: 'https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-listas.jpg?raw=true?auto=format&fit=crop&q=80',
       description: 'Uma solução que combina segmentos existentes e novos para criar listas de disparos mais precisas, aumentando a relevância das campanhas e melhorando a experiência do usuário.',
     },
     {
       title: 'Redesign da Tela de Perfil',
       category: 'Product Management',
-      image: 'imagens/mockup-perfil.jpg?auto=format&fit=crop&q=80',
+      image: 'https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-perfil.png?raw=true?auto=format&fit=crop&q=80',
       description: 'Com base em feedbacks dos usuários, reformulamos a tela de perfil para simplificar o acesso a favoritos, dados cadastrais, limite de crédito, pedidos e lojas seguidas, proporcionando uma navegação mais fluida e intuitiva.',
     },
     {
       title: 'Conceito Inicial para o Programa Viva',
       category: 'UX/UI Design',
-      image: 'imagens/mockup-viva.jpg?auto=format&fit=crop&q=80',
+      image: 'https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-viva.jpg?raw=true?auto=format&fit=crop&q=80',
       description: 'Conceito inicial para a homepage, telas de login e cadastro, blog e newsletter, alinhados ao design system e guia gráfico da marca, com o objetivo de oferecer uma experiência visual integrada e consistente.',
     },
   ];

@@ -53,7 +53,7 @@ const About = () => {
       <div className="container mx-auto px-4" style={{ paddingTop: "80px" }}>
         <div className="grid md:grid-cols-1 gap-12 items-left w-full">
           <div className="w-full">
-            <h2 className="text-3xl font-bold mb-12 text-center">Formação</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">Formação</h2>
             <p className="text-gray-800 mb-6 font-semibold text-center">
               Bacharel em Arquitetura e Urbanismo pelo Centro Universitário SENAC, com uma sólida base em design estratégico. Complemento minha formação com especializações voltadas para UX/UI, desenvolvimento front-end e análise de dados.
             </p>

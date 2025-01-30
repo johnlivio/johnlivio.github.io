@@ -58,7 +58,7 @@ const Project1 = () => {
                   </p>
                   <div className="relative flex justify-center p-6">
                     <img
-                      src="imagens\diagrama-listas3.png?raw=true?auto=format&fit=crop&q=80"
+                      src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/diagrama-listas3.png?raw=true?auto=format&fit=crop&q=80"
                       alt="Professional workspace"
                       className="w-[1046,4px] h-[576,6px] mb-12"
                     />
@@ -71,7 +71,7 @@ const Project1 = () => {
                   </p>
                   <div className="relative flex justify-center p-6">
                     <img
-                      src="imagens\solucao.png?raw=true?auto=format&fit=crop&q=80"
+                      src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/solucao.png?raw=true?auto=format&fit=crop&q=80"
                       alt="Professional workspace"
                       className="w-[1046,4px] h-[576,6px] mb-12"
                     />

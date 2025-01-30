@@ -27,7 +27,7 @@ const Project3 = () => {
                     <img
                       src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/conceito.png?raw=true?auto=format&fit=crop&q=80"
                       alt="Professional workspace"
-                      className="mb-12"
+                      className="w-[664.5px] h-[100px] mb-12"
                     />
                   </div>
                 </div>

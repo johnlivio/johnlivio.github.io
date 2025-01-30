@@ -14,7 +14,7 @@ const About = () => {
             <img
               src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/yo.jpg?raw=true?auto=format&fit=crop&q=80"
               alt="Professional workspace"
-              className="rounded-lg shadow-md filter grayscale w-[120px] h-[120px] object-cover"
+              className="rounded-full shadow-md filter grayscale w-[120px] h-[120px] object-cover"
             />
           </div>
             <div className="grid gap-0 items-center">

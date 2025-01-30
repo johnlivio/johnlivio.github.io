@@ -9,10 +9,10 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   const navigation = [
     { name: 'Home', href: '#home' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Experiência', href: '#experience' },
-    //{ name: 'Formação', href: '#formacao' },
     { name: 'Projetos', href: '#projects' },
+    { name: 'Experiência', href: '#experience' },
+    { name: 'Sobre', href: '#about' },
+    //{ name: 'Formação', href: '#formacao' },
     //{ name: 'Contato', href: '#contact' },
   ];
 
@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
             <h1 className="text-xl font-semibold">John Medeiros</h1>
             <p className="text-sm text-gray-600">Designer & Product Manager</p>
           </div>
-          
+
           {/* Desktop menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
               ))}
             </div>
           </div>
-          
+
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button

@@ -13,10 +13,13 @@ function App() {
     <div className="min-h-screen bg-white">
       <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
       <main>
+
         <Hero />
-        <About />
-        <Experience />
         <Projects />
+        <Experience />
+        <About />
+
+
       </main>
 
       <footer className="bg-gray-50 py-8">

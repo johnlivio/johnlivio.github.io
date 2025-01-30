@@ -5,7 +5,7 @@ const Project3 = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-12">
           <div>
-            <div><h3 className="text-3xl font-bold mb-8 text-center">Disparador de Listas Personalizada</h3>
+            <div><h3 className="text-3xl font-bold mb-8 text-center">Conceito | Programa Viva</h3>
               <div className="relative flex justify-center pb-6">
                 <img
                   src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-viva.jpg?raw=true'?auto=format&fit=crop&q=80"

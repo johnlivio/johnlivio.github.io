@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import { Menu, X, Github as GitHub, Linkedin, Dribbble, ChevronDown, Mail, MessageCircle } from 'lucide-react';
+import { useState } from 'react';
+import { Github as GitHub, Linkedin, Mail, MessageCircle } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Project1 from './components/project1';
+import Project2 from './components/project2';
+import Project3 from './components/project3';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,6 +21,9 @@ function App() {
         <Projects />
         <Experience />
         <About />
+        <Project1 />
+        <Project2 />
+        <Project3 />
 
 
       </main>

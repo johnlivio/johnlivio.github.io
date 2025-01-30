@@ -1,7 +1,7 @@
 
 const Hero = () => {
   return (
-    <section id="home" className=" flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-40">
+    <section id="home" className=" flex items-center justify-center bg-gradient-to-b from-gray-100 to-white pt-40">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           Olá, eu sou <span className="text-[#3E2723]">o John!</span>

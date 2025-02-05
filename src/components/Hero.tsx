@@ -3,7 +3,7 @@ const Hero = () => {
     <section
       id="home"
       className="relative flex items-center justify-center bg-cover bg-center h-[600px]" // Altura fixa de 600px
-      style={{ backgroundImage: "url('/imagens/banner.png')" }} // Caminho da imagem corrigido
+      style={{ backgroundImage: "url('https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/banner.png?raw=true')" }} // Caminho da imagem corrigido
     >
       {/* Overlay escuro para melhorar a legibilidade */}
       <div className="absolute inset-0 bg-gradient-to-b from-black to-white-20"></div>

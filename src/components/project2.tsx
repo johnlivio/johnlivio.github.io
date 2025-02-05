@@ -88,11 +88,11 @@ const Project2 = () => {
             <div className="items-center">
               <h2 className="text-3xl font-bold m-2 text-center">Solução</h2>
               <p className="text-gray-800 mt-8 mb-8 mr-12 ml-12 font-semibold text-center">
-                Após o teste A/B, foi identificado um design que se destacou em relação aos demais. No entanto, os usuários ainda relataram a falta de um subtítulo explicativo. Para melhorar a clareza, esse subtítulo foi adicionado à versão final, proporcionando uma experiência mais completa e satisfatória. Essas melhorias, junto com o novo componente de limite e solicitação de crédito, resultaram em um aumento superior a 50% nas solicitações de crédito.
+                Após teste A/B, foi identificado um design que se destacou em relação aos demais. No entanto, os usuários ainda relataram a falta de um subtítulo explicativo. Para melhorar a clareza, esse subtítulo foi adicionado à versão final, proporcionando uma experiência mais completa e satisfatória. Essas melhorias, junto com o novo componente de limite e solicitação de crédito, resultaram em um aumento superior a 50% nas solicitações de crédito.
               </p>
               <div className="relative flex justify-center p-6">
                 <img
-                  src="imagens\mockup-tela-perfil.jpg?raw=true?auto=format&fit=crop&q=80"
+                  src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-tela-perfil.jpg?raw=true?auto=format&fit=crop&q=80"
                   alt="Solução final"
                   className="mb-12"
                 />

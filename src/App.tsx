@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   Routes,
   Route,
-  Link
+  Link,
+  useLocation
 } from 'react-router-dom';
 import { Github as GitHub, Linkedin, Mail, MessageCircle } from 'lucide-react';
 import Header from './components/Header';
@@ -16,6 +17,12 @@ import Project3 from './components/project3';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Efeito para rolar a página para o topo sempre que a rota mudar
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <div className="min-h-screen bg-white">

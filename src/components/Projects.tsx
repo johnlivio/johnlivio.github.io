@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom'; // Importe o Link
 
 interface Project {
   id: string;
@@ -33,23 +33,9 @@ const Projects = () => {
     },
   ];
 
-  const scrollToSection = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    event.preventDefault();
-    const element = document.getElementById(id);
-    
-    if (element) {
-      const offset = 64; // Mesmo offset do header
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      
-      window.scrollTo({
-        top: elementPosition - offset,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
-    <section id="projects" className="py-20 bg-white scroll-mt-16">
+    <section id="projects" className="py-12 bg-white scroll-mt-16">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">Projetos</h2>
 
@@ -68,13 +54,13 @@ const Projects = () => {
                   <div className="absolute top-0 left-0 right-0 p-6">
                     <p className="text-m font-semibold text-gray-100 mb-2 pt-2">{project.category}</p>
                     <p className="text-sm text-gray-200">{project.description}</p>
-                    <a
-                      href={`#${project.id}`}
-                      onClick={(e) => scrollToSection(e, project.id)}
+                    {/* Modifique o link para usar o React Router */}
+                    <Link
+                      to={`/projects#${project.id}`}
                       className="inline-block mt-4 px-4 py-2 bg-white text-[#3E2723] rounded-md text-sm font-medium hover:bg-gray-100 transition-colors"
                     >
                       Ver Detalhes
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

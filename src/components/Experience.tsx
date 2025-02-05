@@ -36,7 +36,19 @@ const Experience = () => {
           title: 'UX/UI/Graphgic Designer',
           company: 'Sterna Café',
           period: '2019 - 2021',
-          description: 'Pesquisa com franqueados para entender necessidades e colaborar no desenvolvimento de landingpages, folders e guias, arte criativo de materiais promocionais alinhados à identidade da marca e às demandas levantadas.'
+          description: 'Na Sterna, atuei como UX e Graphic Designer, criando materiais alinhados às necessidades dos franqueados e à identidade visual da marca. Conduzi pesquisas para entender demandas e desenvolvi landing pages, folders e guias estratégicos. Também fui responsável pela criação de materiais promocionais, garantindo estética e funcionalidade. Meu trabalho combinou design centrado no usuário com criatividade, impactando positivamente a experiência dos franqueados e as campanhas.'
+        },
+      ],
+    },
+    {
+      area: 'Designer/Gerente',
+      icon: Palette,
+      items: [
+        {
+          title: 'Gerente e Designer',
+          company: 'Oppa Design',
+          period: '2015 - 2018',
+          description: 'Na Oppa Design, loja de móveis modernos e sustentáveis, comecei como designer vendedor e, após um ano, fui promovido a gerente. Liderava a equipe de vendas, cuidava das operações diárias e garantia o cumprimento de metas, demonstrando crescimento e capacidade de liderança.'
         },
       ],
     }
@@ -47,7 +59,7 @@ const Experience = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">Experiência</h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-8">
           {experiences.map((exp) => (
             <div key={exp.area} className="bg-white rounded-lg p-6 shadow-sm">
               <div className="flex items-center mb-6">

@@ -54,6 +54,9 @@ const About = () => {
             <p className="text-gray-800 mb-6 pb-2 text-sm">
             {i18n.t('text.contact_extended')} 
             </p>
+            <p className="text-gray-800 mb-6 pb-2 text-sm font-bold">
+            {i18n.t('text.this')} 
+            </p>
           </div>
         </div>
       </div>

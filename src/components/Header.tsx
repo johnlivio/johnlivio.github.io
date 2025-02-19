@@ -1,5 +1,5 @@
-import React from 'react';
-import { Menu, X, Languages } from 'lucide-react';
+import React, { useState } from 'react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import i18n from 'i18next';
 
@@ -10,6 +10,16 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   const navigate = useNavigate();
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
+
+  
+
+  const changeLanguage = (lang: 'en' | 'pt') => {
+    i18n.changeLanguage(lang).then(() => {
+      window.location.reload();
+    });
+  };
+  
 
   const navigation = [
     { name: i18n.t('titles.home'), href: '/' },
@@ -49,37 +59,59 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
           </div>
 
           {/* Desktop menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={(e) => {
-                    if (item.href.startsWith('#')) {
-                      e.preventDefault();
-                      scrollToSection(item.href);
-                    }
-                  }}
-                  className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
+          <div className="hidden md:flex items-center space-x-6">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                onClick={(e) => {
+                  if (item.href.startsWith('#')) {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }
+                }}
+                className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
+
+            {/* Language Selector */}
+            <div className="relative">
+              <button
+                onClick={() => setLangMenuOpen(!langMenuOpen)}
+                onBlur={() => setTimeout(() => setLangMenuOpen(false), 200)}
+                className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 p-2 rounded-md"
+              >
+                <Globe className="h-5 w-5" />
+              </button>
+
+              {langMenuOpen && (
+                <div className="absolute center mt-2 w-24 bg-white shadow-lg rounded-lg">
+                  <button
+                    onClick={() => changeLanguage('en')}
+                    className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    EN-US
+                  </button>
+                  <button
+                    onClick={() => changeLanguage('pt')}
+                    className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    PT-BR
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none"
             >
-              {mobileMenuOpen ? (
-                <X className="block h-6 w-6" />
-              ) : (
-                <Menu className="block h-6 w-6" />
-              )}
+              {mobileMenuOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -104,6 +136,21 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
                   {item.name}
                 </Link>
               ))}
+              {/* Mobile Language Selector */}
+              <div className="mt-4 px-3">
+                <button
+                  onClick={() => changeLanguage('en')}
+                  className="block w-full text-left text-sm text-gray-700 py-2 hover:bg-gray-100"
+                >
+                  🇺🇸 English
+                </button>
+                <button
+                  onClick={() => changeLanguage('pt')}
+                  className="block w-full text-left text-sm text-gray-700 py-2 hover:bg-gray-100"
+                >
+                  🇧🇷 Português
+                </button>
+              </div>
             </div>
           </div>
         )}

@@ -5,14 +5,14 @@ import { initReactI18next } from "react-i18next";
 import { messages } from "./languages";
 
 
-const fallbackLng = [ "en" ]; 
+const fallbackLng = [ "pt" ]; 
 
 i18n 
   . use ( Backend ) 
    . use ( LanguageDetector ) 
    . use (initReactI18next) 
    . init ({ 
-    fallbackLng: 'en', 
+    fallbackLng: fallbackLng, 
    debug: true,
    defaultNS: ['translations'],
    ns: ['translations'], 

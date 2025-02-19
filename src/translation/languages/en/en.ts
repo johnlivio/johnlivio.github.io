@@ -85,7 +85,8 @@ const messages = {
         context_viva_program: 'The stakeholder requested the creation of an initial concept for the Homepage, login and registration screens, blog, and newsletter, following the design system guidelines and the brand\'s graphic manual. The goal was to ensure that screens and elements were aligned with the brand\'s visual identity and established standards.',
         exploration_viva_program: 'I conducted a benchmark on the top players in the healthcare market to understand best practices and identify key points for the Viva program\'s design development. This analysis provided valuable insights into functionalities, interfaces, and visual standards, which were essential in creating a solution aligned with the sector\'s needs.',
         wireframing_viva_program: 'We created wireframes for the initial screens to define the layout and structure of the homepage, login, registration, blog, and newsletter.',
-        designs_viva_program: 'We started designing the screens based on the wireframes and iterated to align with the brand’s visual identity and the needs of the target audience.'
+        designs_viva_program: 'We started designing the screens based on the wireframes and iterated to align with the brand’s visual identity and the needs of the target audience.',
+        this: 'This website was designed, developed, and built by me.'
       }
     }
 

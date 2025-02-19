@@ -28,7 +28,7 @@ const messages = {
         context: 'Context',
         exploration: 'Exploration',
         diagram_lists: 'Diagram of Lists',
-        flow: 'Flow of Disparos',
+        flow: 'Broadcast Flow',
         brainstorm: 'Brainstorm',
         new_flow: 'New Flow',
         solution: 'Solution',

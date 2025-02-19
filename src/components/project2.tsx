@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
+import { i18n } from '../translation/i18n';
 
 const Project2 = () => {
-  // Efeito para scroll automático quando a página carrega com o hash #project2
+  
   useEffect(() => {
     if (window.location.hash === '#project2') {
       const element = document.getElementById('project2');
       if (element) {
-        const offset = 64; // Ajuste conforme a altura do seu header
+        const offset = 64; 
         const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-        
+
         window.scrollTo({
           top: elementPosition - offset,
           behavior: 'smooth'
@@ -22,7 +23,7 @@ const Project2 = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-12">
           <div>
-            <h3 className="text-3xl font-bold mb-8 text-center">Nova tela de perfil</h3>
+            <h3 className="text-3xl font-bold mb-8 text-center">{i18n.t('titles.profile_screen')}</h3>
             <div className="relative flex justify-center pb-6">
               <img
                 src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-perfil.jpg?raw=true?raw=true?auto=format&fit=crop&q=80"
@@ -30,21 +31,19 @@ const Project2 = () => {
                 className="w-full max-w-4xl object-cover object-center h-[400px] mx-auto"
               />
             </div>
-            
+
             {/* Contexto */}
             <div className="items-center">
-              <h2 className="text-3xl font-bold m-2 text-center">Contexto</h2>
+              <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.context')}</h2>
               <p className="text-gray-800 mt-8 mb-12 mr-12 ml-12 font-semibold text-center">
-                Percebemos que precisávamos melhorar a tela de perfil do usuário no app, analisamos feedbacks frequentes sobre dificuldades em encontrar favoritos, alterar dados cadastrais, acessar o limite de crédito, conferir pedidos e visualizar lojas seguidas. Com base nesses dados, resolvemos investigar e mapear todos os pontos levantados pelos usuários e explorar seus problemas.
-              </p>
+                {i18n.t('text.context_profile_screen')}              </p>
             </div>
 
             {/* Exploração */}
             <div className="items-center">
-              <h2 className="text-3xl font-bold m-2 text-center">Exploração</h2>
+              <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.exploration')}</h2>
               <p className="text-gray-800 mt-8 mb-8 mr-12 ml-12 font-semibold text-center">
-                Realizamos um levantamento de dados sobre as reclamações dos usuários, selecionamos um grupo específico para aprofundar a análise e aplicamos uma pesquisa para entender suas principais dores e necessidades. Esse processo foi fundamental para direcionar o esforço corretamente e melhorar a experiência dos usuários.
-              </p>
+{i18n.t('text.exploration_profile_screen')}              </p>
               <div className="relative flex justify-center p-6">
                 <img
                   src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/diagrama-perfil.png?raw=true?auto=format&fit=crop&q=80"
@@ -56,10 +55,9 @@ const Project2 = () => {
 
             {/* Levantamento de usos */}
             <div className="items-center">
-              <h2 className="text-3xl font-bold m-2 text-center">Levantamento de usos</h2>
+              <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.uses')}</h2>
               <p className="text-gray-800 mt-8 mb-8 mr-12 ml-12 font-semibold text-center">
-                Analisamos as funcionalidades da tela de perfil para identificar menus e atalhos com uso irrelevante. A partir disso, priorizamos as funcionalidades essenciais e despriorizamos as de menor valor. Isso visou otimizar a navegação e melhorar a experiência do usuário.
-              </p>
+{i18n.t('text.diagram_profile_screen')}              </p>
               <div className="relative flex justify-center p-6">
                 <img
                   src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/perfil.png?raw=true?auto=format&fit=crop&q=80"
@@ -71,10 +69,9 @@ const Project2 = () => {
 
             {/* Design e Testes A/B */}
             <div className="items-center">
-              <h2 className="text-3xl font-bold m-2 text-center">Design e Testes A/B</h2>
+              <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.ab_testing')}</h2>
               <p className="text-gray-800 mt-8 mb-12 mr-12 ml-12 font-semibold text-center">
-                Desenvolvemos diferentes opções de design e realizamos testes A/B para avaliar qual delas oferecia o melhor desempenho. Através dessa abordagem, conseguimos identificar a solução mais eficaz, garantindo uma experiência do usuário aprimorada e um impacto positivo nas métricas de desempenho.
-              </p>
+{i18n.t('text.test_ab_profile_screen')}              </p>
               <div className="relative flex justify-center p-6">
                 <img
                   src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/perfil2.png?raw=true?auto=format&fit=crop&q=80"
@@ -86,10 +83,9 @@ const Project2 = () => {
 
             {/* Solução */}
             <div className="items-center">
-              <h2 className="text-3xl font-bold m-2 text-center">Solução</h2>
+              <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.solution')}</h2>
               <p className="text-gray-800 mt-8 mb-8 mr-12 ml-12 font-semibold text-center">
-                Após teste A/B, foi identificado um design que se destacou em relação aos demais. No entanto, os usuários ainda relataram a falta de um subtítulo explicativo. Para melhorar a clareza, esse subtítulo foi adicionado à versão final, proporcionando uma experiência mais completa e satisfatória. Essas melhorias, junto com o novo componente de limite e solicitação de crédito, resultaram em um aumento superior a 50% nas solicitações de crédito.
-              </p>
+{i18n.t('text.solution_profile_screen')}              </p>
               <div className="relative flex justify-center p-6">
                 <img
                   src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-tela-perfil.jpg?raw=true?auto=format&fit=crop&q=80"

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'; // Importe o Link
+import { Link } from 'react-router-dom';
+import { i18n } from '../translation/i18n';
 
 interface Project {
   id: string;
@@ -12,24 +13,24 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 'project1',
-      title: 'Disparador de Listas Personalizada',
+      title: i18n.t('titles.broadcast'),
       category: 'UX/UI Design',
       image: 'https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-listas.jpg?raw=true',
-      description: 'Uma solução que combina segmentos existentes e novos para criar listas de disparos mais precisas, aumentando a relevância das campanhas e melhorando a experiência do usuário.',
+      description: i18n.t('text.ux_ui_design'),
     },
     {
       id: 'project2',
-      title: 'Redesign da Tela de Perfil',
+      title: i18n.t('titles.profile_screen_redesign'),
       category: 'Product Management',
       image: 'https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-perfil.png?raw=true',
-      description: 'Com base em feedbacks dos usuários, reformulamos a tela de perfil para simplificar o acesso a favoritos, dados cadastrais, limite de crédito, pedidos e lojas seguidas, proporcionando uma navegação mais fluida e intuitiva.',
+      description: i18n.t('text.product_management_description'),
     },
     {
       id: 'project3',
-      title: 'Conceito Inicial para o Programa Viva',
+      title: i18n.t('titles.initial_concept_viva'),
       category: 'UX/UI Design',
       image: 'https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-viva.jpg?raw=true',
-      description: 'Conceito inicial para a homepage, telas de login e cadastro, blog e newsletter, alinhados ao design system e guia gráfico da marca, com o objetivo de oferecer uma experiência visual integrada e consistente.',
+      description: i18n.t('text.ux_ui_concept_viva'),
     },
   ];
 
@@ -37,7 +38,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-12 bg-white scroll-mt-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">Projetos</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">{i18n.t('titles.projects')}</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
@@ -59,7 +60,7 @@ const Projects = () => {
                       to={`/projects#${project.id}`}
                       className="inline-block mt-4 px-4 py-2 bg-white text-[#3E2723] rounded-md text-sm font-medium hover:bg-gray-100 transition-colors"
                     >
-                      Ver Detalhes
+                      {i18n.t('titles.view_details')}
                     </Link>
                   </div>
                 </div>

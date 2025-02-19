@@ -1,6 +1,7 @@
 import React from 'react';
-import { Menu, X } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom'; // Importe useNavigate
+import { Menu, X, Languages } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import i18n from 'i18next';
 
 interface HeaderProps {
   mobileMenuOpen: boolean;
@@ -8,33 +9,34 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) => {
-  const navigate = useNavigate(); // Hook para navegação programática
+  const navigate = useNavigate();
 
   const navigation = [
-    { name: 'Home', href: '/' }, // Rota para a home
-    { name: 'Projetos', href: '/projects' }, // Rota para a página de projetos
-    { name: 'Experiência', href: '#experience' }, // Âncora para a seção de experiência
-    { name: 'Sobre', href: '#about' }, // Âncora para a seção sobre
+    { name: i18n.t('titles.home'), href: '/' },
+    { name: i18n.t('titles.projects'), href: '/projects' },
+    { name: i18n.t('titles.experience'), href: '#experience' },
+    { name: i18n.t('titles.about'), href: '#about' },
   ];
 
-  // Função para rolar até uma seção específica
+
+
   const scrollToSection = (hash: string) => {
     if (window.location.pathname !== '/') {
-      navigate('/'); // Navega para a home se não estiver nela
+      navigate('/');
     }
 
-    // Aguarda a navegação para a home e depois faz o scroll
+
     setTimeout(() => {
       const element = document.getElementById(hash.replace('#', ''));
       if (element) {
-        const offset = 64; // Ajuste conforme a altura do header
+        const offset = 64;
         const elementPosition = element.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
           top: elementPosition - offset,
           behavior: 'smooth',
         });
       }
-    }, 100); // Tempo para garantir que a home foi carregada
+    }, 100);
   };
 
   return (
@@ -55,8 +57,8 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
                   to={item.href}
                   onClick={(e) => {
                     if (item.href.startsWith('#')) {
-                      e.preventDefault(); // Evita o comportamento padrão do Link
-                      scrollToSection(item.href); // Rola até a seção
+                      e.preventDefault();
+                      scrollToSection(item.href);
                     }
                   }}
                   className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
@@ -92,10 +94,10 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
                   to={item.href}
                   onClick={(e) => {
                     if (item.href.startsWith('#')) {
-                      e.preventDefault(); // Evita o comportamento padrão do Link
-                      scrollToSection(item.href); // Rola até a seção
+                      e.preventDefault();
+                      scrollToSection(item.href);
                     }
-                    setMobileMenuOpen(false); // Fecha o menu mobile
+                    setMobileMenuOpen(false);
                   }}
                   className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900"
                 >

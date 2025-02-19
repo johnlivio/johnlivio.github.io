@@ -14,12 +14,13 @@ import Projects from './components/Projects';
 import Project1 from './components/project1';
 import Project2 from './components/project2';
 import Project3 from './components/project3';
+import { i18n } from './translation/i18n.ts';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Efeito para rolar a página para o topo sempre que a rota mudar
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -54,12 +55,11 @@ function App() {
   );
 }
 
-// Componente Footer separado para reutilização
 const Footer = () => (
   <footer className="bg-gray-50 py-8">
     <div className="container mx-auto px-4 text-center md:grid-rows-2 gap-4">
       <div className="flex justify-center space-x-6 mb-1">
-        <h2 className="text-3xl font-bold mb-4">Contato</h2>
+        <h2 className="text-3xl font-bold mb-4">{i18n.t('titles.contact')}</h2>
       </div>
       <div className="flex justify-center space-x-6 mb-4">
             <a href="https://www.linkedin.com/in/johnliviomedeiros/" className="text-gray-600 hover:text-gray-900" target="_blank"

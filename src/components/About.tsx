@@ -1,8 +1,10 @@
+import { i18n } from '../translation/i18n';
+
 const About = () => {
   const skills = [
-    { category: 'Product', items: ['Gestão de roadmap', 'Product discovery', 'Estratégia data-drive', 'Alinhamento com stakeholders', 'Lançamento de funcionalidades'] },
-    { category: 'Design', items: ['UX/UI Design', 'Design centrado no usuário', 'Prototipação interativa', 'Arquitetura da informação', 'UX Research', 'Testes de usabilidade'] },
-    { category: 'Technical', items: ['Business Intelligence (BI)', 'SQL', 'Figma e ferramentas de design', 'B2B/B2C Markets', 'Pesquisa e análise de dados'] },
+    { category: 'Product', items: [i18n.t('text.product_skills1'), i18n.t('text.product_skills2'), i18n.t('text.product_skills3'), i18n.t('text.product_skills4'), i18n.t('text.product_skills5')] },
+    { category: 'Design', items: [i18n.t('text.design_skills1'), i18n.t('text.design_skills2'), i18n.t('text.design_skills3'), i18n.t('text.design_skills4'), i18n.t('text.design_skills5'), i18n.t('text.design_skills6')] },
+    { category: 'Technical', items: [i18n.t('text.technical_skills1'), i18n.t('text.technical_skills2'), i18n.t('text.technical_skills3'), i18n.t('text.technical_skills4'), i18n.t('text.technical_skills5')] },
   ];
 
   return (
@@ -19,19 +21,11 @@ const About = () => {
             </div>
             <div className="grid gap-0 text-left">
               <div>
-                <h2 className="text-3xl font-bold mb-6 mt-12">Sobre Mim</h2>
+                <h2 className="text-3xl font-bold mb-6 mt-12">{i18n.t('titles.about_me')}</h2>
                 <p className="text-gray-800 mb-2 font-semibold">
-                  Product Manager com experiência em e-commerce B2B/B2C e fintech. Atua liderando soluções SaaS e CRM na maior empresa de atacado do Brasil.
+                  {i18n.t('text.about_me_extended')}
                 </p>
-                <p className="text-gray-800 mb-2 font-semibold">
-                  Formação em design, UX/UI e Business Intelligence, com foco em produtos digitais que maximizam resultados e entregam experiências excepcionais.
-                </p>
-                <p className="text-gray-800 mb-2 font-semibold">
-                  Impacto direto em 1 milhão+ de contatos via CRM, redução de retrabalho operacional e resolução de desafios complexos em mercados B2B e B2C.
-                </p>
-                <p className="text-gray-800 mb-6 pb-2 font-semibold">
-                  Apaixonado por tecnologia e inovação, alinhando necessidades do negócio à experiência do usuário.
-                </p>
+
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mt-6">
@@ -48,18 +42,17 @@ const About = () => {
                 </div>
               ))}
             </div>
-            <h2 className="text-3xl font-bold mb-6 mt-12">Formação</h2>
+            <h2 className="text-3xl font-bold mb-6 mt-12">{ i18n.t('titles.education')}</h2>
             <p className="text-gray-800 mb-2 font-semibold">
-              Bacharel em Arquitetura e Urbanismo pelo Centro Universitário SENAC, com uma sólida base em design estratégico. Complemento minha formação com especializações voltadas para UX/UI, desenvolvimento front-end e análise de dados.
-            </p>
+              {i18n.t('text.education_extended')}            </p>
             <ul className="text-gray-800 mb-6 font-semibold">
-              <li>Certificado Google UX Design (Coursera.org) – 174 horas</li>
-              <li>Certificação GA4 - Google Analytics – 30 horas</li>
-              <li>Certificação em Ads Digital (Consultoria 7) – Facebook e Google Ads – 30 horas</li>
-              <li>Front-end Developer (DIO) – HTML, CSS e JavaScript – 102 horas</li>
+              <li> {i18n.t('text.education_extended1')} </li>
+              <li> {i18n.t('text.education_extended2')} </li>
+              <li> {i18n.t('text.education_extended3')} </li>
+              <li> {i18n.t('text.education_extended4')} </li>
             </ul>
             <p className="text-gray-800 mb-6 pb-2 text-sm">
-              Essa formação multidisciplinar permite que eu una criatividade, tecnologia e análise de dados para criar soluções digitais eficientes e centradas no usuário.
+            {i18n.t('text.contact_extended')} 
             </p>
           </div>
         </div>

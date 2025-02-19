@@ -1,4 +1,5 @@
 import { Palette, Layout, Briefcase } from 'lucide-react';
+import i18n from 'i18next';
 
 const Experience = () => {
   const experiences = [
@@ -9,8 +10,9 @@ const Experience = () => {
         {
           title: 'Product Manager',
           company: 'ZAX',
-          period: '2022 - Presente',
-          description: 'Como Product Manager, gerenciei a criação e manutenção de uma ferramenta SaaS que contribui com até 30% da receita da empresa. Co-liderei o lançamento de um novo site, resultando em 60% mais tráfego no marketplace e 5% de aumento no GMV em dois meses. Também participei da implementação de uma ferramenta de campanhas com banners, que elevou a receita recorrente em 30%. Liderei projetos estratégicos de e-commerce e SaaS, focados em inovação, crescimento de receita e otimização de processos.',
+          period: '2022 - Present',
+          description: i18n.t('text.experience_zax'),
+         
         },
       ],
     }
@@ -23,32 +25,32 @@ const Experience = () => {
           title: 'UX/UI Designer',
           company: 'ZAX',
           period: '2021 - 2022',
-          description: 'Responsável pela criação e implementação de uma cultura de pesquisa com usuários e análise de dados para fundamentar decisões de design, desenvolvimento de novas interfaces e ferramentas baseadas em dados, além da realização de testes A/B. Liderou o redesign da interface de fornecedores, alinhando as mudanças às pesquisas com usuários e incentivando ações desejadas. Coordenou a equipe de design, promovendo inovação contínua, busca por referências e a criação de designs sólidos e orientados a objetivos.',
+          description: i18n.t('text.ux_ui_design_extended'),
 
         },
       ],
     },
     {
-      area: 'UX/UI/Gráfico Design',
+      area: i18n.t('titles.ux_graphic_design'),
       icon: Palette,
       items: [
         {
-          title: 'UX/UI/Graphgic Designer',
+          title: i18n.t('titles.ux_graphic_design'),
           company: 'Sterna Café',
           period: '2019 - 2021',
-          description: 'Na Sterna, atuei como UX e Graphic Designer, criando materiais alinhados às necessidades dos franqueados e à identidade visual da marca. Conduzi pesquisas para entender demandas e desenvolvi landing pages, folders e guias estratégicos. Também fui responsável pela criação de materiais promocionais, garantindo estética e funcionalidade. Meu trabalho combinou design centrado no usuário com criatividade, impactando positivamente a experiência dos franqueados e as campanhas.'
+          description: i18n.t('text.ux_graphic_design_extended'),
         },
       ],
     },
     {
-      area: 'Designer/Gerente',
+      area: i18n.t('titles.designer_manager'),
       icon: Palette,
       items: [
         {
-          title: 'Gerente e Designer',
+          title: i18n.t('titles.designer_manager'),
           company: 'Oppa Design',
           period: '2015 - 2018',
-          description: 'Na Oppa Design, loja de móveis modernos e sustentáveis, comecei como designer vendedor e, após um ano, fui promovido a gerente. Liderava a equipe de vendas, cuidava das operações diárias e garantia o cumprimento de metas, demonstrando crescimento e capacidade de liderança.'
+          description: i18n.t('text.designer_manager_extended'),
         },
       ],
     }
@@ -57,7 +59,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">Experiência</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">{i18n.t('titles.experience')}</h2>
         
         <div className="grid md:grid-cols-4 gap-8">
           {experiences.map((exp) => (
@@ -72,7 +74,7 @@ const Experience = () => {
                   <div key={item.title}>
                     <h4 className="font-medium">{item.title}</h4>
                     <p className="text-sm text-gray-600">{item.company}</p>
-                    <p className="text-sm text-gray-500 mb-2">{item.period}</p>
+                    {item.period && <p className="text-sm text-gray-500 mb-2">{item.period}</p>}
                     <p className="text-sm text-gray-600">{item.description}</p>
                   </div>
                 ))}

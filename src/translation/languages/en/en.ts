@@ -37,7 +37,7 @@ const messages = {
         designs: 'Designs',
         uses: 'Usage Assessment',
         ab_testing: 'A/B Testing',
-        concept_viva: 'Conceito Viva Program'
+        concept_viva: 'Concept Viva Program'
       },
       text: {
         about: 'UX/UI Designer, Product Manager, and Graphic Designer passionate about creating exceptional digital experiences.',
@@ -71,7 +71,7 @@ const messages = {
         education_extended3: 'Digital Ads Certification (Consultoria 7) – Facebook and Google Ads – 30 hours',
         education_extended4: 'Front-end Developer (DIO) – HTML, CSS, and JavaScript – 102 hours',
         contact_extended: 'This multidisciplinary background allows me to combine creativity, technology, and data analysis to create efficient, user-centered digital solutions.',
-        context_custom_broadcast: 'In the ZAX360 platform, we faced issues with inadequate contact segmentation, resulting in ineffective and poorly targeted communications. This affected the accuracy of marketing campaigns and user engagement, requiring improvements in segmentation to ensure more personalized and relevant communications.',
+        context_custom_broadcast: 'The ZAX360 platform is a solution designed to help manufacturers and suppliers manage their wholesale operations more efficiently, offering features like WhatsApp broadcast and sales analysis. In the ZAX360 platform, we faced issues with inadequate contact segmentation, resulting in ineffective and poorly targeted communications. This affected the accuracy of marketing campaigns and user engagement, requiring improvements in segmentation to ensure more personalized and relevant communications.',
         exploration_custom_broadcast: 'We conducted research with users and stakeholders to evaluate the effectiveness of message dispatches, identify system gaps, and understand the main issues caused by general dispatches (to all contacts). This research provided us with insights on how to enhance our communications, returns, and improve the user experience.',
         diagram_lists_custom_broadcast: 'We mapped the broadcast flow in ZAX360 to identify critical points where we could insert segmented lists. This mapping was crucial in optimizing the process, ensuring communications were more targeted and effective. Additionally, we improved the user experience by making the segmentation process more educational and intuitive.',
         brainstorm_custom_broadcast: 'We gathered and discussed the main user needs, mapping the goals for campaign dispatches. This process allowed us to identify areas for improvement and begin developing proposals to optimize and segment campaign dispatches to better meet user expectations.',

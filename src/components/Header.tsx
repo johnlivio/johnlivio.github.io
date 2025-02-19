@@ -12,14 +12,11 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
   const navigate = useNavigate();
   const [langMenuOpen, setLangMenuOpen] = useState(false);
 
-  
-
-  const changeLanguage = (lang: 'en' | 'pt') => {
-    i18n.changeLanguage(lang).then(() => {
-      window.location.reload();
-    });
+  const changeLanguage = async (lang: 'en' | 'pt') => {
+    await i18n.changeLanguage(lang);
+    setLangMenuOpen(false); // Fecha o menu de idiomas após a troca
+    window.location.reload(); // Recarrega a página para aplicar mudanças globais
   };
-  
 
   const navigation = [
     { name: i18n.t('titles.home'), href: '/' },
@@ -28,13 +25,10 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
     { name: i18n.t('titles.about'), href: '#about' },
   ];
 
-
-
   const scrollToSection = (hash: string) => {
     if (window.location.pathname !== '/') {
       navigate('/');
     }
-
 
     setTimeout(() => {
       const element = document.getElementById(hash.replace('#', ''));
@@ -80,14 +74,13 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
             <div className="relative">
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                onBlur={() => setTimeout(() => setLangMenuOpen(false), 200)}
-                className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 p-2 rounded-md"
+                className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 p-2 rounded-md focus:outline-none"
               >
                 <Globe className="h-5 w-5" />
               </button>
 
               {langMenuOpen && (
-                <div className="absolute center mt-2 w-24 bg-white shadow-lg rounded-lg">
+                <div className="absolute right-0 mt-2 w-24 bg-white shadow-lg rounded-lg z-50">
                   <button
                     onClick={() => changeLanguage('en')}
                     className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
@@ -136,6 +129,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
                   {item.name}
                 </Link>
               ))}
+
               {/* Mobile Language Selector */}
               <div className="mt-4 px-3">
                 <button

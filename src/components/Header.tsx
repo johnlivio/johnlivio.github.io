@@ -14,8 +14,8 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
 
   const changeLanguage = async (lang: 'en' | 'pt') => {
     await i18n.changeLanguage(lang);
-    setLangMenuOpen(false); // Fecha o menu de idiomas após a troca
-    window.location.reload(); // Recarrega a página para aplicar mudanças globais
+    setLangMenuOpen(false); // Fecha o menu de idiomas
+    window.location.replace('/'); // Redireciona para a home antes de recarregar
   };
 
   const navigation = [

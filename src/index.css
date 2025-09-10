@@ -1,0 +1,259 @@
+/* Ensure Tailwind CSS is installed and configured correctly */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Fixed Font */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Share Tech Mono', monospace;
+    color: #1c1c1c; /* Dark gray text */
+    background-color: #ffffff; /* White background */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
+
+@layer components {
+  .container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media (min-width: 640px) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    @media (min-width: 1024px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Retro Components */
+  .retro-button {
+    background: linear-gradient(45deg, #1c1c1c, #2d5a2d);
+    border: 2px solid #1c1c1c;
+    color: #ffffff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 2px 2px 0px #1c1c1c;
+  }
+
+  .retro-button:hover {
+    background: linear-gradient(45deg, #2d5a2d, #1c1c1c);
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px #1c1c1c;
+  }
+
+  .retro-button:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px #1c1c1c;
+  }
+
+  .retro-card {
+    background: #ffffff;
+    border: 2px solid #1c1c1c;
+    box-shadow: 4px 4px 0px #1c1c1c;
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .retro-text {
+    color: #1c1c1c;
+  }
+
+  .retro-text-secondary {
+    color: #1c1c1c;
+  }
+
+  .retro-text-accent {
+    color: #2d5a2d;
+  }
+
+  .retro-bg-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, #1c1c1c 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, #2d5a2d 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+  }
+
+  .retro-border {
+    border: 2px solid #1c1c1c;
+    box-shadow: 
+      inset 2px 2px 0px #ffffff,
+      inset -2px -2px 0px #000000;
+  }
+
+  .retro-input {
+    background: #ffffff;
+    border: 2px solid #1c1c1c;
+    color: #1c1c1c;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .retro-input:focus {
+    outline: none;
+    border-color: #1c1c1c;
+    box-shadow: 0 0 10px #1c1c1c;
+  }
+
+  /* Pixelated images */
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  /* Glitch effect for hover */
+  .glitch:hover {
+    animation: glitch 0.3s ease-in-out;
+  }
+
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+  }
+
+  /* Scanlines effect */
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      transparent 50%,
+      rgba(28, 28, 28, 0.03) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .availability-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 2px solid #1c1c1c;
+    border-radius: 0;
+    padding: 8px 16px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: #1c1c1c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 2px 2px 0px #1c1c1c;
+    image-rendering: pixelated;
+    position: relative;
+  }
+
+  .availability-pill::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #00cc00;
+    border: 1px solid #1c1c1c;
+    border-radius: 0;
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 4px #00cc00;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 4px #00cc00;
+    }
+    50% {
+      opacity: 0.6;
+      box-shadow: 0 0 8px #00cc00;
+    }
+  }
+
+  .schedule-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 2px solid #1c1c1c;
+    border-radius: 0;
+    padding: 8px 16px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: #1c1c1c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 2px 2px 0px #1c1c1c;
+    image-rendering: pixelated;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .schedule-button:hover {
+    background: #1c1c1c;
+    color: #ffffff;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px #1c1c1c;
+  }
+
+  .schedule-button::before {
+    content: '📅';
+    font-size: 10px;
+  }
+
+  .close-button {
+    position: sticky;
+    top: 16px;
+    right: 16px;
+    background: #ffffff;
+    border: 2px solid #1c1c1c;
+    border-radius: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 18px;
+    color: #1c1c1c;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px #1c1c1c;
+    image-rendering: pixelated;
+    transition: all 0.2s ease;
+    z-index: 10;
+    float: right;
+    margin-bottom: 16px;
+  }
+
+  .close-button:hover {
+    background: #1c1c1c;
+    color: #ffffff;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px #1c1c1c;
+  }
+}

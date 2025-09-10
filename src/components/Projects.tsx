@@ -40,7 +40,7 @@ const Projects = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">{i18n.t('titles.projects')}</h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
             <div key={project.id} className="group relative">
               <h3 className="text-xl font-semibold text-[#3E2723] mt-4 pb-4">{project.title}</h3>

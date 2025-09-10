@@ -7,7 +7,6 @@ const messages = {
         hi: 'Olá, eu sou John!',
         projects: 'Projetos',
         profile_screen_redesign: 'Redesign da tela de perfil',
-        initial_concept_viva: 'Conceito inicial para o Programa Viva',
         view_details: 'Ver detalhes',
         experience: 'Experiência',
         product_management: 'Gestão de Produto',
@@ -16,7 +15,7 @@ const messages = {
         date: '2022 - Presente',
         ux_ui_design: 'Design UX/UI',
         ux_graphic_design: 'Design UX/UI/Gráfico',
-        designer_manager: 'Designer/Gerente',
+        designer_manager: 'Designer\ne Gerente',
         about_me: 'Sobre Mim',
         product: 'Produto',
         design: 'Design',
@@ -37,18 +36,16 @@ const messages = {
         designs: 'Designs',
         uses: 'Avaliação de Uso',
         ab_testing: 'Teste A/B',
-        concept_viva: 'Conceito Programa Viva'
       },
       text: {
         about: 'Designer UX/UI, Gerente de Produto e Designer Gráfico apaixonado por criar experiências digitais excepcionais.',
         ux_ui_design: 'Uma solução que combina segmentos existentes e novos para criar listas de envio mais precisas, aumentando a relevância das campanhas e aprimorando a experiência do usuário.',
         product_management_description: 'Com base no feedback dos usuários, redesenhamos a tela de perfil para simplificar o acesso aos favoritos, informações da conta, limite de crédito, pedidos e lojas seguidas, proporcionando uma navegação mais fluida e intuitiva.',
-        ux_ui_concept_viva: 'Conceito inicial para a homepage, telas de login e cadastro, blog e newsletter, alinhado ao sistema de design e guia de estilo da marca para proporcionar uma experiência visual consistente.',
         experience_zax: 'Como Gerente de Produto, gerenciei o desenvolvimento e a manutenção de uma ferramenta SaaS que contribui com até 30% da receita da empresa. Co-liderei o lançamento de um novo site, resultando em um aumento de 60% no tráfego do marketplace e um crescimento de 5% no GMV em dois meses. Também contribuí para a implementação de uma ferramenta de campanhas com banners, aumentando a receita recorrente em 30%.',
         ux_ui_design_extended: 'Responsável por criar e implementar uma cultura de pesquisa de usuários e análise de dados para embasar decisões de design, desenvolver novas interfaces e ferramentas baseadas em dados, além de realizar testes A/B.',
         ux_graphic_design_extended: 'Na Sterna, trabalhei como Designer UX e Gráfico, criando materiais alinhados às necessidades dos franqueados e à identidade visual da marca.',
         designer_manager_extended: 'Na Oppa Design, comecei como designer vendedor e, após um ano, fui promovido a gerente.',
-        about_me_extended: 'Gerente de Produto com experiência em e-commerce B2B/B2C e fintech. Lidera soluções SaaS e CRM na maior empresa atacadista do Brasil.',
+        about_me_extended: 'UX/UI Designer e Gerente de Produto com experiência em e-commerce B2B/B2C e fintech. Lidera soluções SaaS e CRM na maior empresa atacadista do Brasil.',
         product_skills1: 'Gestão de Roadmap',
         product_skills2: 'Descoberta de Produto',
         product_skills3: 'Orientado a Dados',
@@ -82,11 +79,9 @@ const messages = {
         diagram_profile_screen: 'Analisamos as funcionalidades da tela de perfil para identificar menus e atalhos irrelevantes. Com base nisso, priorizamos as funcionalidades essenciais e despriorizamos as de menor valor. Isso visava otimizar a navegação e melhorar a experiência do usuário.',
         test_ab_profile_screen: 'Desenvolvemos diferentes opções de design e realizamos testes A/B para avaliar qual delas apresentava o melhor desempenho. Por meio dessa abordagem, conseguimos identificar a solução mais eficaz, garantindo uma experiência aprimorada para o usuário e um impacto positivo nas métricas de desempenho.',
         solution_profile_screen: 'Após os testes A/B, identificamos um design que superou os demais. No entanto, os usuários ainda relataram a falta de um subtítulo explicativo. Para melhorar a clareza, esse subtítulo foi adicionado à versão final, proporcionando uma experiência mais completa e satisfatória. Essas melhorias, juntamente com o novo componente de limite de crédito e solicitação, resultaram em um aumento de mais de 50% nas solicitações de crédito.',
-        context_viva_program: 'O stakeholder solicitou a criação de um conceito inicial para a Homepage, telas de login e registro, blog e newsletter, seguindo as diretrizes do design system e o manual gráfico da marca. O objetivo era garantir que as telas e elementos estivessem alinhados com a identidade visual da marca e os padrões estabelecidos.',
-        exploration_viva_program: 'Realizei um benchmark com os principais players do mercado de saúde para entender as melhores práticas e identificar pontos-chave para o desenvolvimento do design do programa Viva. Essa análise forneceu insights valiosos sobre funcionalidades, interfaces e padrões visuais, que foram essenciais para criar uma solução alinhada com as necessidades do setor.',
-        wireframing_viva_program: 'Criamos wireframes para as telas iniciais, a fim de definir o layout e a estrutura da homepage, login, registro, blog e newsletter.',
-        designs_viva_program: 'Começamos a projetar as telas com base nos wireframes e iteramos para alinhar com a identidade visual da marca e as necessidades do público-alvo.',
-        this: 'Este site foi idealizado, projetado e desenvolvido por mim.'
+        this: 'Este site foi idealizado, projetado e desenvolvido por mim com IA.',
+        available: 'Disponível',
+        schedule_meeting: 'Vamos conversar?'
       }
     }
   }

@@ -4,10 +4,9 @@ const messages = {
       titles: {
         home: 'Home',
         about: 'About',
-        hi: 'Hello, I’m John!',
+        hi: 'Hello, I\'m John!',
         projects: 'Projects',
         profile_screen_redesign: 'Profile screen redesign',
-        initial_concept_viva: 'Initial concept for the Viva Program',
         view_details: 'View details',
         experience: 'Experience',
         product_management: 'Product management',
@@ -16,7 +15,7 @@ const messages = {
         date: '2022 - Present',
         ux_ui_design: 'UX/UI Design',
         ux_graphic_design: 'UX/UI/Graphic Design',
-        designer_manager: 'Designer/Manager',
+        designer_manager: 'Designer\nand Manager',
         about_me: 'About Me',
         product: 'Product',
         design: 'Design',
@@ -37,18 +36,16 @@ const messages = {
         designs: 'Designs',
         uses: 'Usage Assessment',
         ab_testing: 'A/B Testing',
-        concept_viva: 'Concept Viva Program'
       },
       text: {
         about: 'UX/UI Designer, Product Manager, and Graphic Designer passionate about creating exceptional digital experiences.',
         ux_ui_design: 'A solution that combines existing and new segments to create more precise mailing lists, increasing campaign relevance and enhancing the user experience.',
         product_management_description: 'Based on user feedback, we redesigned the profile screen to simplify access to favorites, account information, credit limit, orders, and followed stores, providing a smoother and more intuitive navigation experience.',
-        ux_ui_concept_viva: 'Initial concept for the homepage, login and sign-up screens, blog, and newsletter, aligned with the brand’s design system and style guide to provide a seamless and consistent visual experience.',
         experience_zax: 'As a Product Manager, I managed the development and maintenance of a SaaS tool that contributes up to 30% of the company\'s revenue. I co-led the launch of a new website, resulting in a 60% increase in marketplace traffic and a 5% GMV growth in two months. I also contributed to the implementation of a campaign tool with banners, which boosted recurring revenue by 30%. I led strategic e-commerce and SaaS projects focused on innovation, revenue growth, and process optimization.',
         ux_ui_design_extended: 'Responsible for creating and implementing a user research culture and data analysis to support design decisions, developing new interfaces and tools based on data, as well as conducting A/B tests. Led the redesign of the supplier interface, aligning changes with user research and encouraging desired actions. Managed the design team, promoting continuous innovation, reference search, and the creation of solid and goal-oriented designs.',
         ux_graphic_design_extended: 'At Sterna, I worked as a UX and Graphic Designer, creating materials aligned with the franchisees\' needs and the brand\'s visual identity. I conducted research to understand user demands and developed landing pages, brochures, and strategic guides. Additionally, I was responsible for designing promotional materials, ensuring a balance between aesthetics and functionality. My work combined user-centered design principles with creative solutions, positively impacting the franchisee experience and enhancing campaign effectiveness.',
         designer_manager_extended: 'At Oppa Design, a modern and sustainable furniture store, I started as a designer salesperson and, after one year, was promoted to manager. I led the sales team, managed daily operations, and ensured the achievement of goals, demonstrating growth and leadership capacity.',
-        about_me_extended: 'Product Manager with experience in B2B/B2C e-commerce and fintech. Leads SaaS and CRM solutions in Brazil’s largest wholesale company. Holds a degree in design, UX/UI, and Business Intelligence, focused on digital products that maximize results and deliver exceptional experiences. Direct impact on 1+ million contacts via CRM, reducing operational rework, and solving complex challenges in B2B and B2C markets. Passionate about technology and innovation, aligning business needs with user experience.',
+        about_me_extended: 'UX/UI Designer and Product Manager with experience in B2B/B2C e-commerce and fintech. Leads SaaS and CRM solutions in Brazil\'s largest wholesale company. Holds a degree in design, UX/UI, and Business Intelligence, focused on digital products that maximize results and deliver exceptional experiences. Direct impact on 1+ million contacts via CRM, reducing operational rework, and solving complex challenges in B2B and B2C markets. Passionate about technology and innovation, aligning business needs with user experience.',
         product_skills1: 'Roadmap management',
         product_skills2: 'Product discovery',
         product_skills3: 'Data-driven',
@@ -82,18 +79,12 @@ const messages = {
         diagram_profile_screen: 'We analyzed the functionalities of the profile screen to identify irrelevant menus and shortcuts. Based on this, we prioritized essential functionalities and deprioritized those of lesser value. This aimed to optimize navigation and improve the user experience.',
         test_ab_profile_screen: 'We developed different design options and conducted A/B testing to evaluate which one performed the best. Through this approach, we were able to identify the most effective solution, ensuring an enhanced user experience and a positive impact on performance metrics.',
         solution_profile_screen: 'After A/B testing, we identified a design that outperformed the others. However, users still reported the lack of an explanatory subtitle. To improve clarity, this subtitle was added to the final version, providing a more complete and satisfying experience. These improvements, along with the new credit limit and request component, resulted in a more than 50% increase in credit requests.',
-        context_viva_program: 'The stakeholder requested the creation of an initial concept for the Homepage, login and registration screens, blog, and newsletter, following the design system guidelines and the brand\'s graphic manual. The goal was to ensure that screens and elements were aligned with the brand\'s visual identity and established standards.',
-        exploration_viva_program: 'I conducted a benchmark on the top players in the healthcare market to understand best practices and identify key points for the Viva program\'s design development. This analysis provided valuable insights into functionalities, interfaces, and visual standards, which were essential in creating a solution aligned with the sector\'s needs.',
-        wireframing_viva_program: 'We created wireframes for the initial screens to define the layout and structure of the homepage, login, registration, blog, and newsletter.',
-        designs_viva_program: 'We started designing the screens based on the wireframes and iterated to align with the brand’s visual identity and the needs of the target audience.',
-        this: 'This website was designed, developed, and built by me.'
+        this: 'This website was designed, developed, and built by me with AI.',
+        available: 'Available',
+        schedule_meeting: 'Let\'s talk?'
       }
     }
-
   }
-}
+};
 
-
-
-
-export { messages }
+export { messages };

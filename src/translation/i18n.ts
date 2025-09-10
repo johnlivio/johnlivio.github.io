@@ -5,7 +5,7 @@ import { initReactI18next } from "react-i18next";
 import { messages } from "./languages";
 
 
-const fallbackLng = [ "pt" ]; 
+const fallbackLng = [ "en" ]; 
 
 i18n 
   . use ( Backend ) 

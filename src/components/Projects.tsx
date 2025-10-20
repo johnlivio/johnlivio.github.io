@@ -13,24 +13,24 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 'project1',
+      title: i18n.t('titles.shipping_calculator'),
+      category: 'UX/UI Design',
+      image: 'https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/banner-frete-calc.jpg?raw=true',
+      description: i18n.t('text.context_shipping_calculator'),
+    },
+    {
+      id: 'project2',
       title: i18n.t('titles.broadcast'),
       category: 'UX/UI Design',
       image: 'https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-listas.jpg?raw=true',
       description: i18n.t('text.ux_ui_design'),
     },
     {
-      id: 'project2',
-      title: i18n.t('titles.profile_screen_redesign'),
-      category: 'Product Management',
+      id: 'project3',
+      title: i18n.t('titles.profile_screen'),
+      category: 'UX Design and Product Designer',
       image: 'https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-perfil.png?raw=true',
       description: i18n.t('text.product_management_description'),
-    },
-    {
-      id: 'project3',
-      title: i18n.t('titles.initial_concept_viva'),
-      category: 'UX/UI Design',
-      image: 'https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-viva.jpg?raw=true',
-      description: i18n.t('text.ux_ui_concept_viva'),
     },
   ];
 

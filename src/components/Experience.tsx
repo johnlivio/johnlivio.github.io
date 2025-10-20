@@ -8,7 +8,7 @@ const Experience = () => {
       icon: Briefcase,
       items: [
         {
-          title: 'Product Manager',
+          title: 'Product Designer',
           company: 'ZAX',
           period: '2022 - Present',
           description: i18n.t('text.experience_zax'),
@@ -18,7 +18,7 @@ const Experience = () => {
     }
     ,
     {
-      area: 'UX/UI Design',
+      area: i18n.t('titles.ux_ui_design'),
       icon: Layout,
       items: [
         {

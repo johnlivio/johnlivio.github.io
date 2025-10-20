@@ -15,7 +15,9 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
   const changeLanguage = async (lang: 'en' | 'pt') => {
     await i18n.changeLanguage(lang);
     setLangMenuOpen(false); // Fecha o menu de idiomas
-    window.location.replace('/'); // Redireciona para a home antes de recarregar
+    // Vai para o topo e recarrega a página
+    window.scrollTo(0, 0);
+    window.location.reload();
   };
 
   const navigation = [
@@ -49,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <h1 className="text-xl font-semibold">John Medeiros</h1>
-            <p className="text-sm text-gray-600">Designer & Product Manager</p>
+            <p className="text-sm text-gray-600">Designer & Product Designer</p>
           </div>
 
           {/* Desktop menu */}

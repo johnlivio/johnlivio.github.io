@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { i18n } from '../translation/i18n';
 
 const Project2 = () => {
-  
+ 
   useEffect(() => {
     if (window.location.hash === '#project2') {
       const element = document.getElementById('project2');
@@ -23,60 +23,69 @@ const Project2 = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-12">
           <div>
-            <h3 className="text-3xl font-bold mb-8 text-center">{i18n.t('titles.profile_screen')}</h3>
+            <h3 className="text-3xl font-bold mb-8 text-center">{i18n.t('titles.broadcast')}</h3>
             <div className="relative flex justify-center pb-6">
               <img
-                src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-perfil.jpg?raw=true?raw=true?auto=format&fit=crop&q=80"
+                src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-listas.jpg?raw=true?auto=format&fit=crop&q=80"
                 alt="Professional workspace"
                 className="w-full max-w-4xl object-cover object-center h-[400px] mx-auto"
               />
             </div>
 
+
             {/* Contexto */}
             <div className="items-center">
               <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.context')}</h2>
               <p className="text-gray-800 mt-8 mb-12 mr-12 ml-12 font-semibold text-center">
-                {i18n.t('text.context_profile_screen')}              </p>
+                {i18n.t('text.context_custom_broadcast')}
+              </p>
             </div>
 
             {/* Exploração */}
             <div className="items-center">
               <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.exploration')}</h2>
               <p className="text-gray-800 mt-8 mb-8 mr-12 ml-12 font-semibold text-center">
-{i18n.t('text.exploration_profile_screen')}              </p>
+                {i18n.t('text.exploration_custom_broadcast')}              </p>
               <div className="relative flex justify-center p-6">
                 <img
-                  src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/diagrama-perfil.png?raw=true?auto=format&fit=crop&q=80"
-                  alt="Diagrama de perfil"
+                  src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/diagrama-listas.png?raw=true?auto=format&fit=crop&q=80"
+                  alt="Diagrama de listas"
                   className="w-[664.5px] h-[100px] mb-12"
                 />
               </div>
             </div>
 
-            {/* Levantamento de usos */}
+            {/* Fluxo de disparos */}
             <div className="items-center">
-              <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.uses')}</h2>
+              <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.flow')}</h2>
               <p className="text-gray-800 mt-8 mb-8 mr-12 ml-12 font-semibold text-center">
-{i18n.t('text.diagram_profile_screen')}              </p>
+                {i18n.t('text.diagram_lists_custom_broadcast')}               </p>
               <div className="relative flex justify-center p-6">
                 <img
-                  src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/perfil.png?raw=true?auto=format&fit=crop&q=80"
-                  alt="Tela de perfil"
-                  className="mb-12"
+                  src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/diagrama-listas2.png?raw=true?auto=format&fit=crop&q=80"
+                  alt="Fluxo de disparos"
+                  className="w-[1046.4px] h-[576.6px] mb-12"
                 />
               </div>
             </div>
 
-            {/* Design e Testes A/B */}
+            {/* Brainstorm */}
             <div className="items-center">
-              <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.ab_testing')}</h2>
+              <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.brainstorm')}</h2>
               <p className="text-gray-800 mt-8 mb-12 mr-12 ml-12 font-semibold text-center">
-{i18n.t('text.test_ab_profile_screen')}              </p>
+              {i18n.t('text.brainstorm_custom_broadcast')}               </p>
+            </div>
+
+            {/* Novo fluxo */}
+            <div className="items-center">
+              <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.new_flow')}</h2>
+              <p className="text-gray-800 mt-8 mb-8 mr-12 ml-12 font-semibold text-center">
+              {i18n.t('text.new_flow_custom_broadcast')}               </p>
               <div className="relative flex justify-center p-6">
                 <img
-                  src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/perfil2.png?raw=true?auto=format&fit=crop&q=80"
-                  alt="Testes A/B"
-                  className="mb-12"
+                  src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/diagrama-listas3.png?raw=true?auto=format&fit=crop&q=80"
+                  alt="Novo fluxo"
+                  className="w-[1046.4px] h-[576.6px] mb-12"
                 />
               </div>
             </div>
@@ -85,12 +94,12 @@ const Project2 = () => {
             <div className="items-center">
               <h2 className="text-3xl font-bold m-2 text-center">{i18n.t('titles.solution')}</h2>
               <p className="text-gray-800 mt-8 mb-8 mr-12 ml-12 font-semibold text-center">
-{i18n.t('text.solution_profile_screen')}              </p>
+              {i18n.t('text.solution_custom_broadcast')}               </p>
               <div className="relative flex justify-center p-6">
                 <img
-                  src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/mockup-tela-perfil.jpg?raw=true?auto=format&fit=crop&q=80"
-                  alt="Solução final"
-                  className="mb-12"
+                  src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/solucao.png?raw=true?auto=format&fit=crop&q=80"
+                  alt="Solução"
+                  className="w-[1046.4px] h-[576.6px] mb-12"
                 />
               </div>
             </div>

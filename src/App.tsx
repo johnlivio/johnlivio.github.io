@@ -38,56 +38,6 @@ function App() {
   ];
 
 
-  const experiences = [
-    {
-      area: i18n.t('titles.ux_ui_design'),
-      icon: Layout,
-      items: [
-        {
-          title: 'Product Designer',
-          company: 'ZAX',
-          period: '06/2021 - 08/2025',
-          description: i18n.t('text.ux_ui_design_extended'),
-        },
-      ],
-    },
-    {
-      area: i18n.t('titles.product_management'),
-      icon: Briefcase,
-      items: [
-        {
-          title: 'Product Designer',
-          company: 'ZAX',
-          period: '06/2022 - 08/2025',
-          description: i18n.t('text.experience_zax'),
-        },
-      ],
-    },
-    {
-      area: i18n.t('titles.ux_graphic_design'),
-      icon: Palette,
-      items: [
-        {
-          title: i18n.t('titles.ux_graphic_design'),
-          company: 'Sterna Café',
-          period: '04/2019 - 06/2021',
-          description: i18n.t('text.ux_graphic_design_extended'),
-        },
-      ],
-    },
-    {
-      area: i18n.t('titles.designer_manager'),
-      icon: Palette,
-      items: [
-        {
-          title: i18n.t('titles.designer_manager'),
-          company: 'Oppa Design',
-          period: '09/2015 - 04/2018',
-          description: i18n.t('text.designer_manager_extended'),
-        },
-      ],
-    }
-  ];
 
   const skills = [
     { category: 'Product', items: [i18n.t('text.product_skills1'), i18n.t('text.product_skills2'), i18n.t('text.product_skills3'), i18n.t('text.product_skills4'), i18n.t('text.product_skills5')] },
@@ -263,32 +213,59 @@ function App() {
         {/* Selected Work Section */}
         <SelectedWork />
 
-
         {/* Experience Section */}
         <section id="experience" className="py-20 bg-white" aria-label="Seção de experiência profissional">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl font-bold mb-12 text-center glass-text-accent">{i18n.t('titles.experience')}</h2>
             
             <div className="grid md:grid-cols-4 gap-8">
-              {experiences.map((exp) => (
-                <div key={exp.area} className="glass-card">
-                  <div className="flex items-center mb-6">
-                    <exp.icon className="w-6 h-6 glass-text-accent mr-3" />
-                    <h3 className="text-lg font-semibold glass-text whitespace-pre-line">{exp.area}</h3>
-    </div>
-                  
-                  <div className="space-y-6">
-                    {exp.items.map((item) => (
-                      <div key={item.title}>
-                        <h4 className="font-medium glass-text-secondary">{item.title}</h4>
-                        <p className="text-xs glass-text">{item.company}</p>
-                        {item.period && <p className="text-xs glass-text-secondary mb-2">{item.period}</p>}
-                        <p className="text-xs glass-text">{item.description}</p>
-                      </div>
-                    ))}
-                  </div>
+              <div className="glass-card">
+                <div className="flex items-center mb-6">
+                  <Layout className="w-6 h-6 glass-text-accent mr-3" />
+                  <h3 className="text-lg font-semibold glass-text">Product Designer</h3>
                 </div>
-              ))}
+                <div className="space-y-4">
+                  <p className="text-xs glass-text font-medium">ZAX App</p>
+                  <p className="text-xs glass-text-secondary">{i18n.t('text.zax_designer_period')}</p>
+                  <p className="text-xs glass-text">{i18n.t('text.experience_zax')}</p>
+                </div>
+              </div>
+
+              <div className="glass-card">
+                <div className="flex items-center mb-6">
+                  <Briefcase className="w-6 h-6 glass-text-accent mr-3" />
+                  <h3 className="text-lg font-semibold glass-text">Product Manager</h3>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-xs glass-text font-medium">ZAX App</p>
+                  <p className="text-xs glass-text-secondary">{i18n.t('text.zax_manager_period')}</p>
+                  <p className="text-xs glass-text">{i18n.t('text.ux_ui_design_extended')}</p>
+                </div>
+              </div>
+
+              <div className="glass-card">
+                <div className="flex items-center mb-6">
+                  <Palette className="w-6 h-6 glass-text-accent mr-3" />
+                  <h3 className="text-lg font-semibold glass-text">UX/UI/Graphic Design</h3>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-xs glass-text font-medium">Sterna Café</p>
+                  <p className="text-xs glass-text-secondary">{i18n.t('text.sterna_period')}</p>
+                  <p className="text-xs glass-text">{i18n.t('text.ux_graphic_design_extended')}</p>
+                </div>
+              </div>
+
+              <div className="glass-card">
+                <div className="flex items-center mb-6">
+                  <Palette className="w-6 h-6 glass-text-accent mr-3" />
+                  <h3 className="text-lg font-semibold glass-text">Designer and Manager</h3>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-xs glass-text font-medium">Oppa Design</p>
+                  <p className="text-xs glass-text-secondary">{i18n.t('text.oppa_period')}</p>
+                  <p className="text-xs glass-text">{i18n.t('text.designer_manager_extended')}</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -38,7 +38,7 @@ const SelectedWork = () => {
       title: i18n.t('text.zax360_case_title'),
       tags: ['UX/UI Design', 'SaaS', 'Dashboard'],
       summary: i18n.t('text.zax360_case_summary'),
-      image: '/imagens/zax360-home-banner.png',
+      image: '/imagens/zax360banner.png',
       overview: {
         challenge: 'O setor de moda e têxtil exige comunicação rápida, precisa e mensurável. Fornecedores e fabricantes enfrentavam dificuldade em segmentar clientes por valor de compra (RFV) e medir ROI das campanhas de WhatsApp de forma ineficaz.',
         solution: 'Criação do Dashboard ZAX 360, um painel de controle intuitivo que centraliza métricas financeiras, performance de vendas e saúde da base de contatos, facilitando segmentação precisa e ação imediata via WhatsApp.',
@@ -96,31 +96,42 @@ const SelectedWork = () => {
           </p>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-0">
           {caseStudies.map((caseStudy, index) => (
             <div key={caseStudy.id} id={`case-${caseStudy.id}`} className="fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
-              {/* Main Case Card */}
-              <div className="glass-card glass-project-card">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  {/* Image Section - Dominante */}
-                  <div className="relative">
-                    <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal(caseStudy.image, caseStudy.title)}>
+              {/* Main Case Card - Layout Flat Lado a Lado */}
+              <div className="bg-white overflow-hidden py-[60px]">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  {/* Image Section - Clickable para expandir */}
+                  <div className="relative cursor-pointer" onClick={() => toggleCase(caseStudy.id)}>
+                    <div className="overflow-hidden">
                       <OptimizedImage
                         src={caseStudy.image}
                         alt={caseStudy.title}
-                        className="w-full h-[500px] object-cover wide-image-hover"
+                        className="w-full h-[500px] object-cover transition-transform duration-300 hover:scale-105"
                         loading="lazy"
                         style={{ imageRendering: 'auto' }}
                       />
                     </div>
+                    {/* Overlay com título */}
+                    <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                      <div className="text-white opacity-0 hover:opacity-100 transition-opacity duration-300 text-center">
+                        <h3 className="text-2xl font-bold mb-2">
+                          {caseStudy.id === 'zax360' ? i18n.t('text.commercial_intelligence') : 
+                           caseStudy.id === 'zax-app' ? 'Fashion Marketplace' : 
+                           caseStudy.title}
+                        </h3>
+                        <p className="text-sm">Click to explore</p>
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Content Section - Compacta */}
-                  <div className="space-y-4">
+                  {/* Content Section - Informações do projeto */}
+                  <div className="p-8 space-y-6 bg-white">
                     <div>
                       {caseStudy.id === 'zax360' ? (
-                        <div className="mb-3">
-                          <div className="mb-2">
+                        <div className="mb-4">
+                          <div className="mb-3">
                             <img 
                               src="/imagens/zax360-logo.png" 
                               alt="ZAX 360 Logo" 
@@ -128,11 +139,11 @@ const SelectedWork = () => {
                               style={{ imageRendering: 'auto' }}
                             />
                           </div>
-                          <h3 className="text-2xl font-bold glass-text-accent">{i18n.t('text.commercial_intelligence')}</h3>
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4">{i18n.t('text.commercial_intelligence')}</h3>
                         </div>
                       ) : caseStudy.id === 'zax-app' ? (
-                        <div className="mb-3">
-                          <div className="mb-2">
+                        <div className="mb-4">
+                          <div className="mb-3">
                             <img 
                               src="/imagens/zax-logo.png" 
                               alt="ZAX Logo" 
@@ -140,79 +151,79 @@ const SelectedWork = () => {
                               style={{ imageRendering: 'auto' }}
                             />
                           </div>
-                          <h3 className="text-2xl font-bold glass-text-accent">Fashion Marketplace</h3>
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4">Fashion Marketplace</h3>
                         </div>
                       ) : (
-                        <h3 className="text-2xl font-bold glass-text-accent mb-3">{caseStudy.title}</h3>
+                        <h3 className="text-2xl font-bold text-gray-800 mb-4">{caseStudy.title}</h3>
                       )}
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      
+                      <p className="text-gray-600 text-base leading-relaxed mb-6">
+                        {caseStudy.summary}
+                      </p>
+
+                      <div className="flex flex-wrap gap-2 mb-6">
                         {caseStudy.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-3 py-1 text-xs font-medium glass-text bg-white/30 backdrop-blur-sm border border-white/40 rounded-full"
-                            style={{ borderColor: '#1c1c1c' }}
+                            className="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-200 border border-gray-300 rounded-full"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
+
+                      <button
+                        onClick={() => toggleCase(caseStudy.id)}
+                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-full bg-white hover:bg-gray-50 hover:border-gray-400 transition-colors duration-200"
+                        aria-label={`${expandedCase === caseStudy.id ? 'Fechar' : 'Ver'} detalhes do projeto ${caseStudy.title}`}
+                      >
+                        {expandedCase === caseStudy.id ? (
+                          <>
+                            <ChevronUp className="w-4 h-4" />
+                            {i18n.t('text.close_details')}
+                          </>
+                        ) : (
+                          <>
+                            <ChevronDown className="w-4 h-4" />
+                            {i18n.t('text.view_details')}
+                          </>
+                        )}
+                      </button>
                     </div>
-
-                    <p className="glass-text-secondary text-sm leading-relaxed mb-4">
-                      {caseStudy.summary}
-                    </p>
-
-                    <button
-                      onClick={() => toggleCase(caseStudy.id)}
-                      className="glass-button flex items-center gap-2 text-sm px-4 py-2"
-                      aria-label={`${expandedCase === caseStudy.id ? 'Fechar' : 'Ver'} detalhes do projeto ${caseStudy.title}`}
-                    >
-                      {expandedCase === caseStudy.id ? (
-                        <>
-                          <ChevronUp className="w-4 h-4" />
-                          {i18n.t('text.close_details')}
-                        </>
-                      ) : (
-                        <>
-                          <ChevronDown className="w-4 h-4" />
-                          {i18n.t('text.view_details')}
-                        </>
-                      )}
-                    </button>
                   </div>
                 </div>
               </div>
 
               {/* Expanded Content */}
               {expandedCase === caseStudy.id && (
-                <div className="mt-8 glass-card expanded-content">
+                <div className="mt-0 bg-white expanded-content">
                   <div className="space-y-12">
                     {/* Visão Geral */}
                     <div className="mb-16">
-                      <h4 className="text-2xl font-bold glass-text-accent mb-6 flex items-center gap-3">
+                      <h4 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
                         <Target className="w-6 h-6" />
                         {caseStudy.id === 'zax-app' ? i18n.t('text.zax_app_overview') : caseStudy.id === 'zax360' ? i18n.t('text.zax360_overview') : null}
                       </h4>
-                      <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg mb-6 border border-white/30">
+                      <div className="bg-gray-50 p-6 rounded-lg mb-6 border border-gray-200">
                         {caseStudy.id === 'zax-app' ? (
                           <>
-                            <p className="text-base glass-text-secondary leading-relaxed mb-4">
+                            <p className="text-base text-gray-600 leading-relaxed mb-4">
                               {i18n.t('text.zax_overview')}
                             </p>
-                            <p className="text-base glass-text-secondary leading-relaxed">
+                            <p className="text-base text-gray-600 leading-relaxed">
                               {i18n.t('text.zax_focus')}
                             </p>
                           </>
                         ) : caseStudy.id === 'zax360' ? (
                           <>
-                            <p className="text-base glass-text-secondary leading-relaxed mb-4">
+                            <p className="text-base text-gray-600 leading-relaxed mb-4">
                               {i18n.t('text.zax360_case_summary')}
                             </p>
-                            <p className="text-base glass-text-secondary leading-relaxed mb-4">
+                            <p className="text-base text-gray-600 leading-relaxed mb-4">
                               {i18n.t('text.zax360_platform_description')}
                             </p>
-                            <p className="text-base glass-text-secondary leading-relaxed">
-                              {i18n.t('text.learn_more_text')} <a href="https://venda.zaxapp.com.br/360" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline transition-colors">https://venda.zaxapp.com.br/360</a>
+                            <p className="text-base text-gray-600 leading-relaxed">
+                              {i18n.t('text.learn_more_text')} <a href="https://venda.zaxapp.com.br/360" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-500 underline transition-colors">https://venda.zaxapp.com.br/360</a>
                             </p>
                           </>
                         ) : null}
@@ -1175,7 +1186,7 @@ const SelectedWork = () => {
                     <div className="flex justify-center pt-6">
                       <button
                         onClick={() => toggleCase(caseStudy.id)}
-                        className="glass-button flex items-center gap-3 text-base px-8 py-4"
+                        className="inline-flex items-center gap-3 px-6 py-3 text-base font-medium text-gray-700 border-2 border-gray-300 rounded-full bg-white hover:bg-gray-50 hover:border-gray-400 transition-colors duration-200"
                         aria-label={i18n.t('text.close_details')}
                       >
                         <X className="w-5 h-5" />

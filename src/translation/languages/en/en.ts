@@ -93,6 +93,11 @@ const messages = {
         the_challenge: 'The Challenge:',
         project_goal: 'Project Goal:',
         schedule_meeting: 'Let\'s talk?',
+        // Experience dates
+        zax_designer_period: 'Jun 2021 – Aug 2025',
+        zax_manager_period: 'Jan 2023 – Aug 2025',
+        sterna_period: 'Apr 2019 – Jun 2021',
+        oppa_period: 'Sep 2015 – Apr 2018',
         selected_work_description: 'User-centered projects with business impact and optimized interfaces.',
         view_details: 'View Details',
         close_details: 'Close Details',

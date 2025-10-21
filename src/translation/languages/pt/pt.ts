@@ -93,6 +93,11 @@ const messages = {
         the_challenge: 'O Desafio:',
         project_goal: 'Objetivo do Projeto:',
         schedule_meeting: 'Vamos conversar?',
+        // Experience dates
+        zax_designer_period: 'Jun 2021 – Ago 2025',
+        zax_manager_period: 'Jan 2023 – Ago 2025',
+        sterna_period: 'Abr 2019 – Jun 2021',
+        oppa_period: 'Set 2015 – Abr 2018',
         selected_work_description: 'Projetos centrado no usuário, com impacto nos negócios e interfaces otimizadas.',
         view_details: 'Ver Detalhes',
         close_details: 'Fechar Detalhes',

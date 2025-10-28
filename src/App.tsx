@@ -556,6 +556,10 @@ function App() {
               rel="noopener noreferrer">
               <GitHub className="w-6 h-6" />
             </a>
+             <a href="https://www.behance.net/johnmedeiros" className="retro-text hover:retro-text-accent" target="_blank"
+             rel="noopener noreferrer">
+             <Behance className="w-6 h-6" /> 
+            </a>
             <a
               href="mailto:johnlheviu@gmail.com"
                 className="retro-text hover:retro-text-accent"

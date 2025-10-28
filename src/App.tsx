@@ -219,7 +219,7 @@ function App() {
         <section
           id="home"
           className="relative flex items-center justify-center bg-cover bg-center h-[600px]"
-          style={{ backgroundImage: "url('https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/banner.png?raw=true')" }} 
+          style={{ backgroundImage: "url('https://johnlivio.github.io/imagens/banner.png?raw=true')" }} 
         >
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm" style={{backdropFilter: 'blur(55%)'}}></div>
           <div className="container mx-auto px-4 text-center relative z-10">
@@ -490,7 +490,7 @@ function App() {
               <div className="m-20">
                 <div className="relative flex justify-center pb-4">
                   <img
-                    src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/yo.jpg?raw=true"
+                    src="https://johnlivio.github.io/imagens/yo.jpg?raw=true"
                     alt="Professional workspace"
                     className="rounded-full shadow-md filter grayscale w-[120px] h-[120px] object-cover pixelated retro-border"
                   />

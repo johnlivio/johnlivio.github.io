@@ -490,7 +490,7 @@ function App() {
               <div className="m-20">
                 <div className="relative flex justify-center pb-4">
                   <img
-                    src="https://johnlivio.github.io/imagens/yo.jpg?raw=true"
+                    src="https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/yo.jpg?raw=true"
                     alt="Professional workspace"
                     className="rounded-full shadow-md filter grayscale w-[120px] h-[120px] object-cover pixelated retro-border"
                   />

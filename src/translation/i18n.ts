@@ -13,7 +13,7 @@ i18n
   .init({
     lng: "en", // Idioma padrão definido como inglês
     fallbackLng: fallbackLng,
-    debug: true,
+    debug: false,
     defaultNS: ['translations'],
     ns: ['translations'],
     resources: messages

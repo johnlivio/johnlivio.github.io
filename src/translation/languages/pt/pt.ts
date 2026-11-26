@@ -88,7 +88,6 @@ const messages = {
         impact_shipping_calculator: 'Para o usuário:\n• Mais clareza e previsibilidade no frete\n• Maior confiança antes de adicionar ao carrinho\n\nPara o negócio:\n• Aumento da retenção no checkout em 2,5% em média\n• Apoio direto ao objetivo comercial de aumentar conversão',
         this: 'Este site foi idealizado, projetado e desenvolvido por mim com IA.',
         available: 'Disponível',
-        under_maintenance: 'Em atualização',
         under_development: 'Em desenvolvimento',
         the_challenge: 'O Desafio:',
         project_goal: 'Objetivo do Projeto:',
@@ -298,7 +297,31 @@ const messages = {
         study_cases_studies_description: 'Análise detalhada de problemas reais e desenvolvimento de soluções baseadas em pesquisa e melhores práticas de UX/UI.',
         study_cases_results_title: 'Resultados',
         study_cases_evolution_title: 'Evolução Contínua',
-        study_cases_evolution_description: 'Através destes estudos de caso, demonstro minha evolução contínua em Product Design, aplicando metodologias centradas no usuário e mantendo um Design System robusto e escalável.'
+        study_cases_evolution_description: 'Através destes estudos de caso, demonstro minha evolução contínua em Product Design, aplicando metodologias centradas no usuário e mantendo um Design System robusto e escalável.',        
+        // Aria labels (acessibilidade)
+        aria: {
+          main_menu: 'Menu principal',
+          go_to_section: 'Ir para seção {{section}}',
+          select_language: 'Selecionar idioma',
+          language_menu: 'Seleção de idioma',
+          switch_to_english: 'Alterar para inglês',
+          switch_to_portuguese: 'Alterar para português',
+          open_menu: 'Abrir menu',
+          close_menu: 'Fechar menu',
+          mobile_menu: 'Menu mobile',
+          hero_section: 'Seção inicial - Apresentação',
+          schedule_calendly: 'Agendar reunião no Calendly (abre em nova aba)',
+          experience_section: 'Seção de experiência profissional',
+          about_section: 'Seção sobre mim',
+          linkedin_newtab: 'LinkedIn (abre em nova aba)',
+          whatsapp_newtab: 'WhatsApp (abre em nova aba)',
+          github_newtab: 'GitHub (abre em nova aba)',
+          email_newtab: 'Enviar email (abre em nova aba)',
+          view_project_details: 'Ver detalhes do projeto {{title}}',
+          close_project_details: 'Fechar detalhes do projeto {{title}}',
+          download_appstore: 'Baixar ZAX App na App Store (abre em nova aba)',
+          download_playstore: 'Baixar ZAX App na Google Play Store (abre em nova aba)'
+        }
       }
     }
   }

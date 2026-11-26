@@ -88,7 +88,6 @@ const messages = {
         impact_shipping_calculator: 'For the user:\n• More clarity and predictability in shipping\n• Greater confidence before adding to cart\n\nFor the business:\n• Average increase in checkout retention of 2.5%\n• Direct support for the commercial goal of increasing conversion',
         this: 'This website was designed, developed, and built by me with AI.',
         available: 'Available',
-        under_maintenance: 'Under maintenance',
         under_development: 'Under development',
         the_challenge: 'The Challenge:',
         project_goal: 'Project Goal:',
@@ -298,7 +297,31 @@ const messages = {
         study_cases_studies_description: 'Detailed analysis of real problems and development of solutions based on research and UX/UI best practices.',
         study_cases_results_title: 'Results',
         study_cases_evolution_title: 'Continuous Evolution',
-        study_cases_evolution_description: 'Through these case studies, I demonstrate my continuous evolution in Product Design, applying user-centered methodologies and maintaining a robust and scalable Design System.'
+        study_cases_evolution_description: 'Through these case studies, I demonstrate my continuous evolution in Product Design, applying user-centered methodologies and maintaining a robust and scalable Design System.',        
+        // Aria labels (accessibility)
+        aria: {
+          main_menu: 'Main menu',
+          go_to_section: 'Go to section {{section}}',
+          select_language: 'Select language',
+          language_menu: 'Language selection',
+          switch_to_english: 'Switch to English',
+          switch_to_portuguese: 'Switch to Portuguese',
+          open_menu: 'Open menu',
+          close_menu: 'Close menu',
+          mobile_menu: 'Mobile menu',
+          hero_section: 'Home section - Introduction',
+          schedule_calendly: 'Schedule a meeting on Calendly (opens in new tab)',
+          experience_section: 'Professional experience section',
+          about_section: 'About me section',
+          linkedin_newtab: 'LinkedIn (opens in new tab)',
+          whatsapp_newtab: 'WhatsApp (opens in new tab)',
+          github_newtab: 'GitHub (opens in new tab)',
+          email_newtab: 'Send email (opens in new tab)',
+          view_project_details: 'View details of project {{title}}',
+          close_project_details: 'Close details of project {{title}}',
+          download_appstore: 'Download ZAX App on the App Store (opens in new tab)',
+          download_playstore: 'Download ZAX App on Google Play Store (opens in new tab)'
+        }
       }
     }
   }

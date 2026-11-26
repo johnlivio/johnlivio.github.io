@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { i18n } from '../translation/i18n';
+import { useTranslation } from 'react-i18next';
 import OptimizedImage from './OptimizedImage';
 import { ChevronDown, ChevronUp, X, Target, Zap } from 'lucide-react';
 
@@ -17,16 +17,17 @@ interface CaseStudy {
 }
 
 const SelectedWork = () => {
+  const { t } = useTranslation();
   const [expandedCase, setExpandedCase] = useState<string | null>(null);
   const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null);
 
   const caseStudies: CaseStudy[] = [
     {
       id: 'zax-app',
-      title: i18n.t('text.zax_case_title'),
+      title: t('text.zax_case_title'),
       tags: ['UX/UI Design', 'E-commerce', 'Mobile App'],
-      summary: i18n.t('text.zax_case_summary'),
-      image: '/imagens/banner-frete-calc.jpg',
+      summary: t('text.zax_case_summary'),
+      image: '/imagens/banner-frete-calc.webp',
       overview: {
         challenge: 'ZAX App é um marketplace de moda que conecta mais de mil fornecedores (principalmente do Brás, Bom Retiro) a revendedores e lojistas em todo o país. O desafio era digitalizar e facilitar vendas no atacado e varejo de moda no Brasil.',
         solution: 'Desenvolvimento de duas soluções estratégicas: Calculadora de Frete para transparência no checkout e Redesign da Tela de Perfil para melhorar usabilidade e acesso a funcionalidades críticas.',
@@ -35,10 +36,10 @@ const SelectedWork = () => {
     },
     {
       id: 'zax360',
-      title: i18n.t('text.zax360_case_title'),
+      title: t('text.zax360_case_title'),
       tags: ['UX/UI Design', 'SaaS', 'Dashboard'],
-      summary: i18n.t('text.zax360_case_summary'),
-      image: '/imagens/zax360banner.png',
+      summary: t('text.zax360_case_summary'),
+      image: '/imagens/zax360banner.webp',
       overview: {
         challenge: 'O setor de moda e têxtil exige comunicação rápida, precisa e mensurável. Fornecedores e fabricantes enfrentavam dificuldade em segmentar clientes por valor de compra (RFV) e medir ROI das campanhas de WhatsApp de forma ineficaz.',
         solution: 'Criação do Dashboard ZAX 360, um painel de controle intuitivo que centraliza métricas financeiras, performance de vendas e saúde da base de contatos, facilitando segmentação precisa e ação imediata via WhatsApp.',
@@ -47,13 +48,13 @@ const SelectedWork = () => {
     },
     {
       id: 'study-cases',
-      title: i18n.t('text.study_cases_title'),
+      title: t('text.study_cases_title'),
       tags: ['UX/UI Design', 'Estudo', 'Design System'],
-      summary: i18n.t('text.study_cases_summary'),
-      image: '/imagens/estudos-casos.jpg',
+      summary: t('text.study_cases_summary'),
+      image: '/imagens/estudos-casos.webp',
       overview: {
-        challenge: i18n.t('text.study_cases_description'),
-        solution: i18n.t('text.study_cases_summary'),
+        challenge: t('text.study_cases_description'),
+        solution: t('text.study_cases_summary'),
         impact: 'Demonstração de evolução contínua em Product Design através de estudos de caso e explorações criativas.'
       }
     }
@@ -87,12 +88,12 @@ const SelectedWork = () => {
   };
 
   return (
-    <section id="selected-work" className="py-16 bg-white" aria-label="Selected Work">
+    <section id="selected-work" className="py-16 bg-white" aria-label={t('titles.selected_work')}>
       <div className="container mx-auto px-4 wide-layout">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold glass-text-accent mb-4 fade-in">{i18n.t('titles.selected_work')}</h2>
+          <h2 className="text-3xl font-bold glass-text-accent mb-4 fade-in">{t('titles.selected_work')}</h2>
           <p className="text-lg glass-text-secondary max-w-2xl mx-auto fade-in fade-in-delay-1">
-            {i18n.t('text.selected_work_description')}
+            {t('text.selected_work_description')}
           </p>
         </div>
 
@@ -117,7 +118,7 @@ const SelectedWork = () => {
                     <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                       <div className="text-white opacity-0 hover:opacity-100 transition-opacity duration-300 text-center">
                         <h3 className="text-2xl font-bold mb-2">
-                          {caseStudy.id === 'zax360' ? i18n.t('text.commercial_intelligence') : 
+                          {caseStudy.id === 'zax360' ? t('text.commercial_intelligence') : 
                            caseStudy.id === 'zax-app' ? 'Fashion Marketplace' : 
                            caseStudy.title}
                         </h3>
@@ -133,19 +134,19 @@ const SelectedWork = () => {
                         <div className="mb-4">
                           <div className="mb-3">
                             <img 
-                              src="/imagens/zax360-logo.png" 
+                              src="/imagens/zax360-logo.webp" 
                               alt="ZAX 360 Logo" 
                               className="h-12 w-auto object-contain"
                               style={{ imageRendering: 'auto' }}
                             />
                           </div>
-                          <h3 className="text-2xl font-bold text-gray-800 mb-4">{i18n.t('text.commercial_intelligence')}</h3>
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4">{t('text.commercial_intelligence')}</h3>
                         </div>
                       ) : caseStudy.id === 'zax-app' ? (
                         <div className="mb-4">
                           <div className="mb-3">
                             <img 
-                              src="/imagens/zax-logo.png" 
+                              src="/imagens/zax-logo.webp" 
                               alt="ZAX Logo" 
                               className="h-12 w-auto object-contain"
                               style={{ imageRendering: 'auto' }}
@@ -175,17 +176,17 @@ const SelectedWork = () => {
                       <button
                         onClick={() => toggleCase(caseStudy.id)}
                         className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-full bg-white hover:bg-gray-50 hover:border-gray-400 transition-colors duration-200"
-                        aria-label={`${expandedCase === caseStudy.id ? 'Fechar' : 'Ver'} detalhes do projeto ${caseStudy.title}`}
+                        aria-label={t(expandedCase === caseStudy.id ? 'text.aria.close_project_details' : 'text.aria.view_project_details', { title: caseStudy.title })}
                       >
                         {expandedCase === caseStudy.id ? (
                           <>
                             <ChevronUp className="w-4 h-4" />
-                            {i18n.t('text.close_details')}
+                            {t('text.close_details')}
                           </>
                         ) : (
                           <>
                             <ChevronDown className="w-4 h-4" />
-                            {i18n.t('text.view_details')}
+                            {t('text.view_details')}
                           </>
                         )}
                       </button>
@@ -202,28 +203,28 @@ const SelectedWork = () => {
                     <div className="mb-16">
                       <h4 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
                         <Target className="w-6 h-6" />
-                        {caseStudy.id === 'zax-app' ? i18n.t('text.zax_app_overview') : caseStudy.id === 'zax360' ? i18n.t('text.zax360_overview') : null}
+                        {caseStudy.id === 'zax-app' ? t('text.zax_app_overview') : caseStudy.id === 'zax360' ? t('text.zax360_overview') : null}
                       </h4>
                       <div className="bg-gray-50 p-6 rounded-lg mb-6 border border-gray-200">
                         {caseStudy.id === 'zax-app' ? (
                           <>
                             <p className="text-base text-gray-600 leading-relaxed mb-4">
-                              {i18n.t('text.zax_overview')}
+                              {t('text.zax_overview')}
                             </p>
                             <p className="text-base text-gray-600 leading-relaxed">
-                              {i18n.t('text.zax_focus')}
+                              {t('text.zax_focus')}
                             </p>
                           </>
                         ) : caseStudy.id === 'zax360' ? (
                           <>
                             <p className="text-base text-gray-600 leading-relaxed mb-4">
-                              {i18n.t('text.zax360_case_summary')}
+                              {t('text.zax360_case_summary')}
                             </p>
                             <p className="text-base text-gray-600 leading-relaxed mb-4">
-                              {i18n.t('text.zax360_platform_description')}
+                              {t('text.zax360_platform_description')}
                             </p>
                             <p className="text-base text-gray-600 leading-relaxed">
-                              {i18n.t('text.learn_more_text')} <a href="https://venda.zaxapp.com.br/360" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-500 underline transition-colors">https://venda.zaxapp.com.br/360</a>
+                              {t('text.learn_more_text')} <a href="https://venda.zaxapp.com.br/360" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-500 underline transition-colors">https://venda.zaxapp.com.br/360</a>
                             </p>
                           </>
                         ) : null}
@@ -238,11 +239,11 @@ const SelectedWork = () => {
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="hover:opacity-80 transition-opacity"
-                            aria-label="Baixar ZAX App na App Store (abre em nova aba)"
+                            aria-label={t('text.aria.download_appstore')}
                           >
                             <img 
-                              src="/imagens/apple.png" 
-                              alt={i18n.t('text.app_store')} 
+                              src="/imagens/apple.webp" 
+                              alt={t('text.app_store')} 
                               className="h-12 w-auto object-contain"
                               style={{ imageRendering: 'auto' }}
                             />
@@ -252,11 +253,11 @@ const SelectedWork = () => {
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="hover:opacity-80 transition-opacity"
-                            aria-label="Baixar ZAX App na Google Play Store (abre em nova aba)"
+                            aria-label={t('text.aria.download_playstore')}
                           >
                             <img 
-                              src="/imagens/android.png" 
-                              alt={i18n.t('text.play_store')} 
+                              src="/imagens/android.webp" 
+                              alt={t('text.play_store')} 
                               className="h-12 w-auto object-contain"
                               style={{ imageRendering: 'auto' }}
                             />
@@ -277,19 +278,19 @@ const SelectedWork = () => {
                         <div className="mb-8">
                           <div className="mb-6">
                             <div className="availability-pill mb-6">
-                              {i18n.t('text.case_real')}
+                              {t('text.case_real')}
                             </div>
                             <h4 className="text-2xl font-bold glass-text-accent flex items-center gap-3">
                               <Target className="w-6 h-6" />
-                              {i18n.t('text.shipping_calculator_title')}
+                              {t('text.shipping_calculator_title')}
                             </h4>
                           </div>
                           
                           <div className="space-y-8">
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.shipping_opportunity_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.shipping_opportunity_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed">
-                                {i18n.t('text.shipping_opportunity_text')}
+                                {t('text.shipping_opportunity_text')}
                               </p>
                             </div>
 
@@ -298,9 +299,9 @@ const SelectedWork = () => {
                             </div>
 
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.problem_opportunity_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.problem_opportunity_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed">
-                                {i18n.t('text.problem_opportunity_text')}
+                                {t('text.problem_opportunity_text')}
                               </p>
                             </div>
 
@@ -309,38 +310,38 @@ const SelectedWork = () => {
                             </div>
 
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.benchmarking_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.benchmarking_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed">
-                                {i18n.t('text.benchmarking_text')}
+                                {t('text.benchmarking_text')}
                               </p>
                             </div>
 
                             {/* Benchmark Image */}
-                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/benchmark-ship-calc.png", i18n.t('text.benchmark_reference'))}>
+                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/benchmark-ship-calc.webp", t('text.benchmark_reference'))}>
                               <OptimizedImage
-                                src="/imagens/benchmark-ship-calc.png"
-                                alt={i18n.t('text.benchmark_reference')}
+                                src="/imagens/benchmark-ship-calc.webp"
+                                alt={t('text.benchmark_reference')}
                                 className="w-full h-auto wide-image-hover"
                                 loading="lazy"
                                 style={{ imageRendering: 'auto' }}
                               />
                             </div>
                             <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                              {i18n.t('text.benchmark_caption')}
+                              {t('text.benchmark_caption')}
                             </p>
 
                             {/* Wireframe Image */}
-                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/wireframe-frete-calc.png", i18n.t('text.wireframe_shipping'))}>
+                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/wireframe-frete-calc.webp", t('text.wireframe_shipping'))}>
                               <OptimizedImage
-                                src="/imagens/wireframe-frete-calc.png"
-                                alt={i18n.t('text.wireframe_shipping')}
+                                src="/imagens/wireframe-frete-calc.webp"
+                                alt={t('text.wireframe_shipping')}
                                 className="w-full h-auto wide-image-hover"
                                 loading="lazy"
                                 style={{ imageRendering: 'auto' }}
                               />
                             </div>
                             <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                              {i18n.t('text.wireframe_caption')}
+                              {t('text.wireframe_caption')}
                             </p>
 
                             {/* Separador */}
@@ -349,26 +350,26 @@ const SelectedWork = () => {
                             </div>
 
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.design_implementation_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.design_implementation_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed">
-                                {i18n.t('text.design_implementation_text')}
+                                {t('text.design_implementation_text')}
                               </p>
                             </div>
 
                             {/* Imagens Recomendadas - Before/After */}
                             <div className="space-y-6">
                               {/* Homepage - Full Width */}
-                              <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/before-after-homepage.png", i18n.t('text.before_after_homepage'))}>
+                              <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/before-after-homepage.webp", t('text.before_after_homepage'))}>
                                 <OptimizedImage
-                                  src="/imagens/before-after-homepage.png"
-                                  alt={i18n.t('text.before_after_homepage')}
+                                  src="/imagens/before-after-homepage.webp"
+                                  alt={t('text.before_after_homepage')}
                                   className="w-full h-auto wide-image-hover"
                                   loading="lazy"
                                   style={{ imageRendering: 'auto' }}
                                 />
                               </div>
                               <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                                {i18n.t('text.homepage_caption')}
+                                {t('text.homepage_caption')}
                               </p>
 
                               {/* Separador */}
@@ -378,18 +379,18 @@ const SelectedWork = () => {
 
                               {/* Modal e PDP - Side by Side */}
                               <div className="grid md:grid-cols-2 gap-6">
-                                <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/before-after-modal.png", i18n.t('text.before_after_modal'))}>
+                                <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/before-after-modal.webp", t('text.before_after_modal'))}>
                                   <OptimizedImage
-                                    src="/imagens/before-after-modal.png"
-                                    alt={i18n.t('text.before_after_modal')}
+                                    src="/imagens/before-after-modal.webp"
+                                    alt={t('text.before_after_modal')}
                                     className="w-full h-auto wide-image-hover"
                                     loading="lazy"
                                     style={{ imageRendering: 'auto' }}
                                   />
                                 </div>
-                                <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/before-after-pdp.png", "Before/After - PDP")}>
+                                <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/before-after-pdp.webp", "Before/After - PDP")}>
                                   <OptimizedImage
-                                    src="/imagens/before-after-pdp.png"
+                                    src="/imagens/before-after-pdp.webp"
                                     alt="Before/After - PDP"
                                     className="w-full h-auto wide-image-hover"
                                     loading="lazy"
@@ -398,7 +399,7 @@ const SelectedWork = () => {
                                 </div>
                               </div>
                               <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                                {i18n.t('text.modal_pdp_caption')}
+                                {t('text.modal_pdp_caption')}
                               </p>
 
                             </div>
@@ -409,19 +410,19 @@ const SelectedWork = () => {
                             </div>
 
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.impact_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.impact_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed">
-                                {i18n.t('text.impact_text')}
+                                {t('text.impact_text')}
                               </p>
                             </div>
 
                             {/* Final Images, Resultados e Key Takeaways - Lado a Lado */}
                             <div className="grid lg:grid-cols-2 gap-8">
                               {/* Mockup Mobile */}
-                              <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/mockcup-frete-calc-mob.jpg", i18n.t('text.mockup_mobile_shipping'))}>
+                              <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/mockcup-frete-calc-mob.webp", t('text.mockup_mobile_shipping'))}>
                                 <OptimizedImage
-                                  src="/imagens/mockcup-frete-calc-mob.jpg"
-                                  alt={i18n.t('text.mockup_mobile_shipping')}
+                                  src="/imagens/mockcup-frete-calc-mob.webp"
+                                  alt={t('text.mockup_mobile_shipping')}
                                   className="w-full h-auto wide-image-hover"
                                   loading="lazy"
                                   style={{ imageRendering: 'auto' }}
@@ -431,24 +432,24 @@ const SelectedWork = () => {
                               <div className="space-y-6">
                                 {/* Resultados */}
                                 <div>
-                                  <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.results')}</h5>
+                                  <h5 className="text-xl font-semibold glass-text mb-4">{t('text.results')}</h5>
                                   <div className="grid md:grid-cols-3 gap-4">
                                     {/* Métrica 1 */}
                                     <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/20 backdrop-blur-sm p-6 rounded-xl border border-emerald-400/30 text-center hover:scale-105 transition-transform duration-300">
                                       <div className="text-4xl font-bold text-emerald-400 mb-3">📈 +2.5%</div>
-                                      <h6 className="font-semibold glass-text mb-2 text-lg">{i18n.t('text.conversion_rate')}</h6>
+                                      <h6 className="font-semibold glass-text mb-2 text-lg">{t('text.conversion_rate')}</h6>
                                     </div>
                                     
                                     {/* Métrica 2 */}
                                     <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 backdrop-blur-sm p-6 rounded-xl border border-blue-400/30 text-center hover:scale-105 transition-transform duration-300">
                                       <div className="text-4xl font-bold text-blue-400 mb-3">✅ 100%</div>
-                                      <h6 className="font-semibold glass-text mb-2 text-lg">{i18n.t('text.shipping_transparency')}</h6>
+                                      <h6 className="font-semibold glass-text mb-2 text-lg">{t('text.shipping_transparency')}</h6>
                                     </div>
                                     
                                     {/* Métrica 3 */}
                                     <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/20 backdrop-blur-sm p-6 rounded-xl border border-purple-400/30 text-center hover:scale-105 transition-transform duration-300">
                                       <div className="text-4xl font-bold text-purple-400 mb-3">🚀 ↑</div>
-                                      <h6 className="font-semibold glass-text mb-2 text-lg">{i18n.t('text.user_confidence')}</h6>
+                                      <h6 className="font-semibold glass-text mb-2 text-lg">{t('text.user_confidence')}</h6>
                                     </div>
                                   </div>
                                 </div>
@@ -456,28 +457,28 @@ const SelectedWork = () => {
                                 <div>
                                   <h5 className="text-xl font-semibold glass-text mb-4 flex items-center gap-3">
                                     <Zap className="w-5 h-5" />
-                                    {i18n.t('text.key_takeaways')}
+                                    {t('text.key_takeaways')}
                                   </h5>
                                   <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 backdrop-blur-sm p-6 rounded-xl border border-amber-400/20">
                                     <p className="text-base glass-text-secondary leading-relaxed">
-                                      {i18n.t('text.key_takeaways_shipping')}
+                                      {t('text.key_takeaways_shipping')}
                                     </p>
                                   </div>
                                 </div>
                               </div>
                             </div>
                             {/* Imagem Final Desktop - Separador Natural */}
-                            <div className="overflow-hidden mt-12 cursor-pointer" onClick={() => openImageModal("/imagens/mockcup-frete-calc-desk.jpg", i18n.t('text.mockup_desktop_shipping'))}>
+                            <div className="overflow-hidden mt-12 cursor-pointer" onClick={() => openImageModal("/imagens/mockcup-frete-calc-desk.webp", t('text.mockup_desktop_shipping'))}>
                               <OptimizedImage
-                                src="/imagens/mockcup-frete-calc-desk.jpg"
-                                alt={i18n.t('text.mockup_desktop_shipping')}
+                                src="/imagens/mockcup-frete-calc-desk.webp"
+                                alt={t('text.mockup_desktop_shipping')}
                                 className="w-full h-auto wide-image-hover"
                                 loading="lazy"
                                 style={{ imageRendering: 'auto' }}
                               />
                             </div>
                             <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                              {i18n.t('text.desktop_product_page_caption')}
+                              {t('text.desktop_product_page_caption')}
                             </p>
                           </div>
                         </div>
@@ -491,19 +492,19 @@ const SelectedWork = () => {
                         <div>
                           <div className="mb-6">
                             <div className="availability-pill mb-6">
-                              {i18n.t('text.case_real')}
+                              {t('text.case_real')}
                             </div>
                             <h4 className="text-2xl font-bold glass-text-accent flex items-center gap-3">
                               <Target className="w-6 h-6" />
-                              {i18n.t('text.profile_redesign_title_section')}
+                              {t('text.profile_redesign_title_section')}
                             </h4>
                           </div>
                           
                           <div className="space-y-8">
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.profile_redesign_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.profile_redesign_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed">
-                                {i18n.t('text.profile_redesign_text')}
+                                {t('text.profile_redesign_text')}
                               </p>
                             </div>
 
@@ -512,24 +513,24 @@ const SelectedWork = () => {
                             </div>
 
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.context_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.context_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed">
-                                {i18n.t('text.context_text')}
+                                {t('text.context_text')}
                               </p>
                             </div>
 
                             {/* Imagem do Perfil Original */}
-                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/perfil.png", i18n.t('text.original_profile'))}>
+                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/perfil.webp", t('text.original_profile'))}>
                               <OptimizedImage
-                                src="/imagens/perfil.png"
-                                alt={i18n.t('text.original_profile')}
+                                src="/imagens/perfil.webp"
+                                alt={t('text.original_profile')}
                                 className="w-full h-auto wide-image-hover"
                                 loading="lazy"
                                 style={{ imageRendering: 'auto' }}
                               />
                             </div>
                             <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                              {i18n.t('text.profile_old_caption')}
+                              {t('text.profile_old_caption')}
                             </p>
 
                             {/* Separador */}
@@ -538,17 +539,17 @@ const SelectedWork = () => {
                             </div>
 
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.research_evaluation_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.research_evaluation_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed">
-                                {i18n.t('text.research_evaluation_text')}
+                                {t('text.research_evaluation_text')}
                               </p>
                             </div>
 
                             {/* Diagrama do Perfil */}
-                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/diagrama-perfil.png", i18n.t('text.profile_analysis_diagram'))}>
+                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/diagrama-perfil.webp", t('text.profile_analysis_diagram'))}>
                               <OptimizedImage
-                                src="/imagens/diagrama-perfil.png"
-                                alt={i18n.t('text.profile_analysis_diagram')}
+                                src="/imagens/diagrama-perfil.webp"
+                                alt={t('text.profile_analysis_diagram')}
                                 className="w-full h-auto wide-image-hover"
                                 loading="lazy"
                                 style={{ imageRendering: 'auto' }}
@@ -561,24 +562,24 @@ const SelectedWork = () => {
                             </div>
 
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.solution_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.solution_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed">
-                                {i18n.t('text.solution_text')}
+                                {t('text.solution_text')}
                               </p>
                             </div>
 
                             {/* Imagem da Solução */}
-                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/perfil2.png", i18n.t('text.solution_new_profile'))}>
+                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/perfil2.webp", t('text.solution_new_profile'))}>
                               <OptimizedImage
-                                src="/imagens/perfil2.png"
-                                alt={i18n.t('text.solution_new_profile')}
+                                src="/imagens/perfil2.webp"
+                                alt={t('text.solution_new_profile')}
                                 className="w-full h-auto wide-image-hover"
                                 loading="lazy"
                                 style={{ imageRendering: 'auto' }}
                               />
                             </div>
                             <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                              {i18n.t('text.profile_redesign_caption')}
+                              {t('text.profile_redesign_caption')}
                             </p>
 
                             {/* Separador */}
@@ -591,15 +592,15 @@ const SelectedWork = () => {
                               {/* Imagem Final */}
                               <div className="flex flex-col">
                                 <div className="mb-4">
-                                  <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.key_improvements_title')}</h5>
+                                  <h5 className="text-xl font-semibold glass-text mb-4">{t('text.key_improvements_title')}</h5>
                                   <p className="text-base glass-text-secondary leading-relaxed">
-                                    {i18n.t('text.key_improvements_text')}
+                                    {t('text.key_improvements_text')}
                                   </p>
                                 </div>
-                                <div className="flex-1 overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/mockup-tela-perfil.jpg", i18n.t('text.final_solution_profile'))}>
+                                <div className="flex-1 overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/mockup-tela-perfil.webp", t('text.final_solution_profile'))}>
                                   <OptimizedImage
-                                    src="/imagens/mockup-tela-perfil.jpg"
-                                    alt={i18n.t('text.final_solution_profile')}
+                                    src="/imagens/mockup-tela-perfil.webp"
+                                    alt={t('text.final_solution_profile')}
                                     className="w-full h-full object-cover wide-image-hover"
                                     loading="lazy"
                                     style={{ imageRendering: 'auto' }}
@@ -610,24 +611,24 @@ const SelectedWork = () => {
                               <div className="space-y-6">
                                 {/* Resultados */}
                                 <div>
-                                  <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.results')}</h5>
+                                  <h5 className="text-xl font-semibold glass-text mb-4">{t('text.results')}</h5>
                                   <div className="grid md:grid-cols-3 gap-4">
                                     {/* Métrica 1 */}
                                     <div className="bg-gradient-to-br from-green-500/20 to-green-600/20 backdrop-blur-sm p-6 rounded-xl border border-green-400/30 text-center hover:scale-105 transition-transform duration-300">
                                       <div className="text-4xl font-bold text-green-400 mb-3">💳 +50%</div>
-                                      <h6 className="font-semibold glass-text mb-2 text-lg">{i18n.t('text.credit_requests')}</h6>
+                                      <h6 className="font-semibold glass-text mb-2 text-lg">{t('text.credit_requests')}</h6>
                                     </div>
                                     
                                     {/* Métrica 2 */}
                                     <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 backdrop-blur-sm p-6 rounded-xl border border-blue-400/30 text-center hover:scale-105 transition-transform duration-300">
                                       <div className="text-4xl font-bold text-blue-400 mb-3">📚 ↑</div>
-                                      <h6 className="font-semibold glass-text mb-2 text-lg">{i18n.t('text.resource_engagement')}</h6>
+                                      <h6 className="font-semibold glass-text mb-2 text-lg">{t('text.resource_engagement')}</h6>
                                     </div>
                                     
                                     {/* Métrica 3 */}
                                     <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/20 backdrop-blur-sm p-6 rounded-xl border border-purple-400/30 text-center hover:scale-105 transition-transform duration-300">
                                       <div className="text-4xl font-bold text-purple-400 mb-3">😊 ↓</div>
-                                      <h6 className="font-semibold glass-text mb-2 text-lg">{i18n.t('text.negative_feedback')}</h6>
+                                      <h6 className="font-semibold glass-text mb-2 text-lg">{t('text.negative_feedback')}</h6>
                                     </div>
                                   </div>
                                 </div>
@@ -635,11 +636,11 @@ const SelectedWork = () => {
                                 <div>
                                   <h5 className="text-xl font-semibold glass-text mb-4 flex items-center gap-3">
                                     <Zap className="w-5 h-5" />
-                                    {i18n.t('text.key_takeaways')}
+                                    {t('text.key_takeaways')}
                                   </h5>
                                   <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 backdrop-blur-sm p-6 rounded-xl border border-amber-400/20">
                                     <p className="text-base glass-text-secondary leading-relaxed">
-                                      {i18n.t('text.key_takeaways_profile')}
+                                      {t('text.key_takeaways_profile')}
                                     </p>
                                   </div>
                                 </div>
@@ -654,31 +655,31 @@ const SelectedWork = () => {
                         <div className="mb-8">
                           <div className="mb-6">
                             <div className="availability-pill mb-6">
-                              {i18n.t('text.case_real')}
+                              {t('text.case_real')}
                             </div>
                             <h4 className="text-2xl font-bold glass-text-accent flex items-center gap-3">
                               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
                               </svg>
-                              {i18n.t('text.transforming_data_title')}
+                              {t('text.transforming_data_title')}
                             </h4>
                           </div>
                           <p className="text-base glass-text-secondary leading-relaxed mb-4">
-                            {i18n.t('text.zax360_intro_text')}
+                            {t('text.zax360_intro_text')}
                           </p>
                           <p className="text-base glass-text-secondary leading-relaxed mb-4">
-                            <strong>{i18n.t('text.the_challenge')}</strong> {i18n.t('text.zax360_problem_text')}
+                            <strong>{t('text.the_challenge')}</strong> {t('text.zax360_problem_text')}
                           </p>
                           <p className="text-base glass-text-secondary leading-relaxed">
-                            <strong>{i18n.t('text.project_goal')}</strong> {i18n.t('text.zax360_objective_text')}
+                            <strong>{t('text.project_goal')}</strong> {t('text.zax360_objective_text')}
                           </p>
                         </div>
 
                         {/* Imagem do Dashboard */}
                         <div className="mb-8">
-                          <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/zax360-homepage.png", "Dashboard ZAX 360")}>
+                          <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/zax360-homepage.webp", "Dashboard ZAX 360")}>
                             <OptimizedImage
-                              src="/imagens/zax360-homepage.png"
+                              src="/imagens/zax360-homepage.webp"
                               alt="Dashboard ZAX 360"
                               className="w-full h-auto wide-image-hover"
                               loading="lazy"
@@ -686,7 +687,7 @@ const SelectedWork = () => {
                             />
                           </div>
                           <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                            {i18n.t('text.zax360_homepage_caption')}
+                            {t('text.zax360_homepage_caption')}
                           </p>
                         </div>
 
@@ -697,28 +698,28 @@ const SelectedWork = () => {
 
                         {/* Contexto e Desafios */}
                         <div className="mb-8">
-                          <h4 className="text-2xl font-bold glass-text-accent mb-6">{i18n.t('text.context_challenges')}</h4>
+                          <h4 className="text-2xl font-bold glass-text-accent mb-6">{t('text.context_challenges')}</h4>
                           <p className="text-base glass-text-secondary leading-relaxed mb-4">
-                            {i18n.t('text.zax360_context_text')}
+                            {t('text.zax360_context_text')}
                           </p>
                           
                           <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg border border-white/30 mb-6">
                             <div className="grid md:grid-cols-2 gap-4">
                               <div>
-                                <h5 className="font-semibold glass-text mb-2">{i18n.t('text.communication_challenge')}</h5>
-                                <p className="text-sm glass-text-secondary">{i18n.t('text.communication_challenge_text')}</p>
+                                <h5 className="font-semibold glass-text mb-2">{t('text.communication_challenge')}</h5>
+                                <p className="text-sm glass-text-secondary">{t('text.communication_challenge_text')}</p>
                               </div>
                               <div>
-                                <h5 className="font-semibold glass-text mb-2">{i18n.t('text.performance_challenge')}</h5>
-                                <p className="text-sm glass-text-secondary">{i18n.t('text.performance_challenge_text')}</p>
+                                <h5 className="font-semibold glass-text mb-2">{t('text.performance_challenge')}</h5>
+                                <p className="text-sm glass-text-secondary">{t('text.performance_challenge_text')}</p>
                               </div>
                               <div>
-                                <h5 className="font-semibold glass-text mb-2">{i18n.t('text.workflow_challenge')}</h5>
-                                <p className="text-sm glass-text-secondary">{i18n.t('text.workflow_challenge_text')}</p>
+                                <h5 className="font-semibold glass-text mb-2">{t('text.workflow_challenge')}</h5>
+                                <p className="text-sm glass-text-secondary">{t('text.workflow_challenge_text')}</p>
                               </div>
                               <div>
-                                <h5 className="font-semibold glass-text mb-2">{i18n.t('text.intelligence_challenge')}</h5>
-                                <p className="text-sm glass-text-secondary">{i18n.t('text.intelligence_challenge_text')}</p>
+                                <h5 className="font-semibold glass-text mb-2">{t('text.intelligence_challenge')}</h5>
+                                <p className="text-sm glass-text-secondary">{t('text.intelligence_challenge_text')}</p>
                               </div>
                             </div>
                           </div>
@@ -731,63 +732,63 @@ const SelectedWork = () => {
 
                         {/* Personas */}
                         <div className="mb-8">
-                          <h4 className="text-2xl font-bold glass-text-accent mb-6">{i18n.t('text.personas_key')}</h4>
+                          <h4 className="text-2xl font-bold glass-text-accent mb-6">{t('text.personas_key')}</h4>
                           <div className="grid md:grid-cols-3 gap-6 mb-6">
                             <div className="bg-white/20 backdrop-blur-sm p-4 rounded-lg border border-white/30">
-                              <div className="cursor-pointer" onClick={() => openImageModal("/imagens/persona1.jpg", i18n.t('text.persona_1_ricardo'))}>
+                              <div className="cursor-pointer" onClick={() => openImageModal("/imagens/persona1.webp", t('text.persona_1_ricardo'))}>
                                 <OptimizedImage
-                                  src="/imagens/persona1.jpg"
-                                  alt={i18n.t('text.persona_1_ricardo')}
+                                  src="/imagens/persona1.webp"
+                                  alt={t('text.persona_1_ricardo')}
                                   className="w-full h-auto object-contain rounded mb-3"
                                   loading="lazy"
                                   style={{ imageRendering: 'auto' }}
                                 />
                               </div>
-                              <h5 className="font-semibold glass-text mb-2">{i18n.t('text.persona_ricardo_name')}</h5>
+                              <h5 className="font-semibold glass-text mb-2">{t('text.persona_ricardo_name')}</h5>
                               <div className="text-xs glass-text-secondary space-y-2">
-                                <p><strong>Age:</strong> {i18n.t('text.persona_ricardo_age')}</p>
-                                <p><strong>Role:</strong> {i18n.t('text.persona_ricardo_role')}</p>
-                                <p><strong>Demographics:</strong> {i18n.t('text.persona_ricardo_demographics')}</p>
-                                <p><strong>Problems:</strong> {i18n.t('text.persona_ricardo_problems')}</p>
-                                <p className="italic"><strong>What he would say:</strong> "{i18n.t('text.persona_ricardo_quote')}"</p>
+                                <p><strong>Age:</strong> {t('text.persona_ricardo_age')}</p>
+                                <p><strong>Role:</strong> {t('text.persona_ricardo_role')}</p>
+                                <p><strong>Demographics:</strong> {t('text.persona_ricardo_demographics')}</p>
+                                <p><strong>Problems:</strong> {t('text.persona_ricardo_problems')}</p>
+                                <p className="italic"><strong>What he would say:</strong> "{t('text.persona_ricardo_quote')}"</p>
                               </div>
                             </div>
                             <div className="bg-white/20 backdrop-blur-sm p-4 rounded-lg border border-white/30">
-                              <div className="cursor-pointer" onClick={() => openImageModal("/imagens/persona2.jpg", i18n.t('text.persona_2_camila'))}>
+                              <div className="cursor-pointer" onClick={() => openImageModal("/imagens/persona2.webp", t('text.persona_2_camila'))}>
                                 <OptimizedImage
-                                  src="/imagens/persona2.jpg"
-                                  alt={i18n.t('text.persona_2_camila')}
+                                  src="/imagens/persona2.webp"
+                                  alt={t('text.persona_2_camila')}
                                   className="w-full h-auto object-contain rounded mb-3"
                                   loading="lazy"
                                   style={{ imageRendering: 'auto' }}
                                 />
                               </div>
-                              <h5 className="font-semibold glass-text mb-2">{i18n.t('text.persona_camila_name')}</h5>
+                              <h5 className="font-semibold glass-text mb-2">{t('text.persona_camila_name')}</h5>
                               <div className="text-xs glass-text-secondary space-y-2">
-                                <p><strong>Age:</strong> {i18n.t('text.persona_camila_age')}</p>
-                                <p><strong>Role:</strong> {i18n.t('text.persona_camila_role')}</p>
-                                <p><strong>Demographics:</strong> {i18n.t('text.persona_camila_demographics')}</p>
-                                <p><strong>Problems:</strong> {i18n.t('text.persona_camila_problems')}</p>
-                                <p className="italic"><strong>What she would say:</strong> "{i18n.t('text.persona_camila_quote')}"</p>
+                                <p><strong>Age:</strong> {t('text.persona_camila_age')}</p>
+                                <p><strong>Role:</strong> {t('text.persona_camila_role')}</p>
+                                <p><strong>Demographics:</strong> {t('text.persona_camila_demographics')}</p>
+                                <p><strong>Problems:</strong> {t('text.persona_camila_problems')}</p>
+                                <p className="italic"><strong>What she would say:</strong> "{t('text.persona_camila_quote')}"</p>
                               </div>
                             </div>
                             <div className="bg-white/20 backdrop-blur-sm p-4 rounded-lg border border-white/30">
-                              <div className="cursor-pointer" onClick={() => openImageModal("/imagens/persona3.jpg", i18n.t('text.persona_3_joao'))}>
+                              <div className="cursor-pointer" onClick={() => openImageModal("/imagens/persona3.webp", t('text.persona_3_joao'))}>
                                 <OptimizedImage
-                                  src="/imagens/persona3.jpg"
-                                  alt={i18n.t('text.persona_3_joao')}
+                                  src="/imagens/persona3.webp"
+                                  alt={t('text.persona_3_joao')}
                                   className="w-full h-auto object-contain rounded mb-3"
                                   loading="lazy"
                                   style={{ imageRendering: 'auto' }}
                                 />
                               </div>
-                              <h5 className="font-semibold glass-text mb-2">{i18n.t('text.persona_joao_name')}</h5>
+                              <h5 className="font-semibold glass-text mb-2">{t('text.persona_joao_name')}</h5>
                               <div className="text-xs glass-text-secondary space-y-2">
-                                <p><strong>Age:</strong> {i18n.t('text.persona_joao_age')}</p>
-                                <p><strong>Role:</strong> {i18n.t('text.persona_joao_role')}</p>
-                                <p><strong>Demographics:</strong> {i18n.t('text.persona_joao_demographics')}</p>
-                                <p><strong>Problems:</strong> {i18n.t('text.persona_joao_problems')}</p>
-                                <p className="italic"><strong>What he would say:</strong> "{i18n.t('text.persona_joao_quote')}"</p>
+                                <p><strong>Age:</strong> {t('text.persona_joao_age')}</p>
+                                <p><strong>Role:</strong> {t('text.persona_joao_role')}</p>
+                                <p><strong>Demographics:</strong> {t('text.persona_joao_demographics')}</p>
+                                <p><strong>Problems:</strong> {t('text.persona_joao_problems')}</p>
+                                <p className="italic"><strong>What he would say:</strong> "{t('text.persona_joao_quote')}"</p>
                               </div>
                             </div>
                           </div>
@@ -800,24 +801,24 @@ const SelectedWork = () => {
 
                         {/* Solução */}
                         <div className="mb-8">
-                          <h4 className="text-2xl font-bold glass-text-accent mb-6">{i18n.t('text.design_centered_value')}</h4>
+                          <h4 className="text-2xl font-bold glass-text-accent mb-6">{t('text.design_centered_value')}</h4>
                           <p className="text-base glass-text-secondary leading-relaxed mb-6">
-                            {i18n.t('text.design_solution_text')}
+                            {t('text.design_solution_text')}
                           </p>
                           
                           <div className="grid md:grid-cols-2 gap-6 mb-6">
-                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/campanhas-ecommerce.png", i18n.t('text.campaigns_ecommerce'))}>
+                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/campanhas-ecommerce.webp", t('text.campaigns_ecommerce'))}>
                               <OptimizedImage
-                                src="/imagens/campanhas-ecommerce.png"
-                                alt={i18n.t('text.campaigns_ecommerce')}
+                                src="/imagens/campanhas-ecommerce.webp"
+                                alt={t('text.campaigns_ecommerce')}
                                 className="w-full h-auto wide-image-hover"
                                 loading="lazy"
                                 style={{ imageRendering: 'auto' }}
                               />
                             </div>
-                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/ecommerce-campanhas-erp.png", "E-commerce, Campanhas e ERP")}>
+                            <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/ecommerce-campanhas-erp.webp", "E-commerce, Campanhas e ERP")}>
                               <OptimizedImage
-                                src="/imagens/ecommerce-campanhas-erp.png"
+                                src="/imagens/ecommerce-campanhas-erp.webp"
                                 alt="E-commerce, Campanhas e ERP"
                                 className="w-full h-auto wide-image-hover"
                                 loading="lazy"
@@ -826,7 +827,7 @@ const SelectedWork = () => {
                             </div>
                           </div>
                           <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                            {i18n.t('text.zax360_variations_caption')}
+                            {t('text.zax360_variations_caption')}
                           </p>
                         </div>
 
@@ -837,9 +838,9 @@ const SelectedWork = () => {
 
                         {/* Impacto de Negócio */}
                         <div className="mb-8">
-                          <h4 className="text-2xl font-bold glass-text-accent mb-6">{i18n.t('text.business_impact_title')}</h4>
+                          <h4 className="text-2xl font-bold glass-text-accent mb-6">{t('text.business_impact_title')}</h4>
                           <p className="text-lg glass-text-secondary leading-relaxed mb-8">
-                            {i18n.t('text.business_impact_description')}
+                            {t('text.business_impact_description')}
                           </p>
                           
                           {/* Métrica Destacada */}
@@ -847,18 +848,18 @@ const SelectedWork = () => {
                             {/* Métrica Principal */}
                             <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/20 backdrop-blur-sm p-8 rounded-xl border border-emerald-400/30 text-center hover:scale-105 transition-transform duration-300">
                               <div className="text-6xl font-bold text-emerald-400 mb-4">💰 30%</div>
-                              <h6 className="font-semibold glass-text mb-3 text-2xl">{i18n.t('text.revenue_increase_metric')}</h6>
+                              <h6 className="font-semibold glass-text mb-3 text-2xl">{t('text.revenue_increase_metric')}</h6>
                               <p className="text-base glass-text-secondary max-w-2xl mx-auto">
-                                {i18n.t('text.revenue_impact_description')}
+                                {t('text.revenue_impact_description')}
                               </p>
                             </div>
                           </div>
 
                           {/* Resumo dos Resultados */}
                           <div className="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 backdrop-blur-sm p-8 rounded-xl border border-emerald-400/20">
-                            <h6 className="text-xl font-bold glass-text-accent mb-4">{i18n.t('text.strategic_result_title')}</h6>
+                            <h6 className="text-xl font-bold glass-text-accent mb-4">{t('text.strategic_result_title')}</h6>
                             <p className="text-base glass-text-secondary leading-relaxed">
-                              {i18n.t('text.strategic_result_description')}
+                              {t('text.strategic_result_description')}
                             </p>
                           </div>
                         </div>
@@ -872,26 +873,26 @@ const SelectedWork = () => {
                         <div className="mb-8">
                           <div className="mb-6">
                             <div className="availability-pill mb-6">
-                              {i18n.t('text.case_real')}
+                              {t('text.case_real')}
                             </div>
                             <h4 className="text-2xl font-bold glass-text-accent flex items-center gap-3">
                               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
                               </svg>
-                              {i18n.t('text.segmentation_campaigns_title')}
+                              {t('text.segmentation_campaigns_title')}
                             </h4>
                           </div>
-                          <div className="overflow-hidden cursor-pointer mb-6" onClick={() => openImageModal("https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/mockup-listas.jpg", i18n.t('text.mockup_lists_segmentation'))}>
+                          <div className="overflow-hidden cursor-pointer mb-6" onClick={() => openImageModal("https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/mockup-listas.webp", t('text.mockup_lists_segmentation'))}>
                             <OptimizedImage
-                              src="https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/mockup-listas.jpg"
-                              alt={i18n.t('text.mockup_lists_segmentation')}
+                              src="https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/mockup-listas.webp"
+                              alt={t('text.mockup_lists_segmentation')}
                               className="w-full h-auto wide-image-hover"
                               loading="lazy"
                               style={{ imageRendering: 'auto' }}
                             />
                           </div>
                           <p className="text-sm glass-text-secondary text-left mt-3 italic mb-6">
-                            {i18n.t('text.custom_lists_mockup_caption')}
+                            {t('text.custom_lists_mockup_caption')}
                           </p>
                           
                           {/* Separador */}
@@ -902,12 +903,12 @@ const SelectedWork = () => {
                           <div className="space-y-8">
                             {/* Título Introdutório */}
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.volume_paradox_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.volume_paradox_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed mb-4">
-                                {i18n.t('text.project_description')}
+                                {t('text.project_description')}
                               </p>
                               <p className="text-base glass-text-secondary leading-relaxed">
-                                {i18n.t('text.project_focus')}
+                                {t('text.project_focus')}
                               </p>
                             </div>
 
@@ -918,34 +919,34 @@ const SelectedWork = () => {
 
                             {/* A Dor dos Compradores */}
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.buyers_pain_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.buyers_pain_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed mb-4">
-                                {i18n.t('text.platform_description')}
+                                {t('text.platform_description')}
                               </p>
                               <p className="text-base glass-text-secondary leading-relaxed mb-4">
-                                {i18n.t('text.central_problem')}
+                                {t('text.central_problem')}
                               </p>
                               <div className="grid md:grid-cols-2 gap-4 mb-6">
                                 <div className="bg-white/20 backdrop-blur-sm p-4 rounded-lg border border-white/30">
-                                  <h6 className="font-semibold glass-text mb-2">{i18n.t('text.buyers_pain_point')}</h6>
-                                  <p className="text-sm glass-text-secondary">{i18n.t('text.buyers_pain_description')}</p>
+                                  <h6 className="font-semibold glass-text mb-2">{t('text.buyers_pain_point')}</h6>
+                                  <p className="text-sm glass-text-secondary">{t('text.buyers_pain_description')}</p>
                                 </div>
                                 <div className="bg-white/20 backdrop-blur-sm p-4 rounded-lg border border-white/30">
-                                  <h6 className="font-semibold glass-text mb-2">{i18n.t('text.clients_pain_point')}</h6>
-                                  <p className="text-sm glass-text-secondary">{i18n.t('text.clients_pain_description')}</p>
+                                  <h6 className="font-semibold glass-text mb-2">{t('text.clients_pain_point')}</h6>
+                                  <p className="text-sm glass-text-secondary">{t('text.clients_pain_description')}</p>
                                 </div>
                               </div>
-                              <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/problems-pains.jpg", i18n.t('text.problems_pains'))}>
+                              <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/problems-pains.webp", t('text.problems_pains'))}>
                                 <OptimizedImage
-                                  src="/imagens/problems-pains.jpg"
-                                  alt={i18n.t('text.problems_pains')}
+                                  src="/imagens/problems-pains.webp"
+                                  alt={t('text.problems_pains')}
                                   className="w-full h-auto wide-image-hover"
                                   loading="lazy"
                                   style={{ imageRendering: 'auto' }}
                                 />
                               </div>
                               <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                                {i18n.t('text.user_pains_caption')}
+                                {t('text.user_pains_caption')}
                               </p>
                             </div>
 
@@ -956,20 +957,20 @@ const SelectedWork = () => {
 
                             {/* Descobertas */}
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.discoveries_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.discoveries_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed mb-4">
-                                {i18n.t('text.research_process')}
+                                {t('text.research_process')}
                               </p>
                               
                               <div className="mb-6">
-                                <h6 className="font-semibold glass-text mb-3">{i18n.t('text.research_users_title')}</h6>
+                                <h6 className="font-semibold glass-text mb-3">{t('text.research_users_title')}</h6>
                                 <p className="text-base glass-text-secondary leading-relaxed mb-3">
-                                  <strong>{i18n.t('text.research_focus')}</strong> {i18n.t('text.research_focus_description')}
+                                  <strong>{t('text.research_focus')}</strong> {t('text.research_focus_description')}
                                 </p>
                                 
-                                <div className="overflow-hidden cursor-pointer mb-4" onClick={() => openImageModal("https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas.png", "Diagrama Listas 1")}>
+                                <div className="overflow-hidden cursor-pointer mb-4" onClick={() => openImageModal("https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas.webp", "Diagrama Listas 1")}>
                                   <OptimizedImage
-                                    src="https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas.png"
+                                    src="https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas.webp"
                                     alt="Diagrama Listas 1"
                                     className="w-full h-auto wide-image-hover"
                                     loading="lazy"
@@ -978,27 +979,27 @@ const SelectedWork = () => {
                                 </div>
                                 
                                 <p className="text-base glass-text-secondary leading-relaxed mb-3">
-                                  <strong>{i18n.t('text.key_findings')}</strong>
+                                  <strong>{t('text.key_findings')}</strong>
                                 </p>
                                 <ul className="list-disc list-inside text-base glass-text-secondary leading-relaxed space-y-2 mb-4">
-                                  <li>{i18n.t('text.finding_1')}</li>
-                                  <li>{i18n.t('text.finding_2')}</li>
-                                  <li>{i18n.t('text.finding_3')}</li>
+                                  <li>{t('text.finding_1')}</li>
+                                  <li>{t('text.finding_2')}</li>
+                                  <li>{t('text.finding_3')}</li>
                                 </ul>
                               </div>
 
                               <div className="mb-6">
-                                <h6 className="font-semibold glass-text mb-3">{i18n.t('text.flow_mapping_title')}</h6>
+                                <h6 className="font-semibold glass-text mb-3">{t('text.flow_mapping_title')}</h6>
                                 <p className="text-base glass-text-secondary leading-relaxed mb-3">
-                                  {i18n.t('text.flow_mapping_description')}
+                                  {t('text.flow_mapping_description')}
                                 </p>
                                 <p className="text-base glass-text-secondary leading-relaxed mb-4">
-                                  {i18n.t('text.brainstorm_description')}
+                                  {t('text.brainstorm_description')}
                                 </p>
                                 
-                                <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas2.png", "Diagrama Listas 2")}>
+                                <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas2.webp", "Diagrama Listas 2")}>
                                   <OptimizedImage
-                                    src="https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas2.png"
+                                    src="https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas2.webp"
                                     alt="Diagrama Listas 2"
                                     className="w-full h-auto wide-image-hover"
                                     loading="lazy"
@@ -1006,7 +1007,7 @@ const SelectedWork = () => {
                                   />
                                 </div>
                                 <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                                  {i18n.t('text.campaign_flow_caption')}
+                                  {t('text.campaign_flow_caption')}
                                 </p>
                               </div>
                             </div>
@@ -1018,14 +1019,14 @@ const SelectedWork = () => {
 
                             {/* Design do Novo Fluxo */}
                             <div>
-                              <h5 className="text-xl font-semibold glass-text mb-4">{i18n.t('text.design_implementation_title')}</h5>
+                              <h5 className="text-xl font-semibold glass-text mb-4">{t('text.design_implementation_title')}</h5>
                               <p className="text-base glass-text-secondary leading-relaxed mb-4">
-                                {i18n.t('text.solution_description')}
+                                {t('text.solution_description')}
                               </p>
                               
-                              <div className="overflow-hidden cursor-pointer mb-6" onClick={() => openImageModal("https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas3.png", "Diagrama Listas 3")}>
+                              <div className="overflow-hidden cursor-pointer mb-6" onClick={() => openImageModal("https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas3.webp", "Diagrama Listas 3")}>
                                 <OptimizedImage
-                                  src="https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas3.png"
+                                  src="https://raw.githubusercontent.com/johnlivio/johnlivio.github.io/refs/heads/main/imagens/diagrama-listas3.webp"
                                   alt="Diagrama Listas 3"
                                   className="w-full h-auto wide-image-hover"
                                   loading="lazy"
@@ -1033,42 +1034,42 @@ const SelectedWork = () => {
                                 />
                               </div>
                               <p className="text-sm glass-text-secondary text-left mt-3 italic mb-6">
-                                {i18n.t('text.new_campaign_flow_caption')}
+                                {t('text.new_campaign_flow_caption')}
                               </p>
                               
                               <div className="mb-6">
-                                <h6 className="font-semibold glass-text mb-3">{i18n.t('text.key_implementation')}</h6>
+                                <h6 className="font-semibold glass-text mb-3">{t('text.key_implementation')}</h6>
                                 <ul className="list-disc list-inside text-base glass-text-secondary leading-relaxed space-y-2">
-                                  <li><strong>{i18n.t('text.advanced_filtering')}:</strong> {i18n.t('text.advanced_filtering_description')}</li>
-                                  <li><strong>{i18n.t('text.educational_experience')}:</strong> {i18n.t('text.educational_experience_description')}</li>
-                                  <li><strong>{i18n.t('text.relevance_focus')}:</strong> {i18n.t('text.relevance_focus_description')}</li>
+                                  <li><strong>{t('text.advanced_filtering')}:</strong> {t('text.advanced_filtering_description')}</li>
+                                  <li><strong>{t('text.educational_experience')}:</strong> {t('text.educational_experience_description')}</li>
+                                  <li><strong>{t('text.relevance_focus')}:</strong> {t('text.relevance_focus_description')}</li>
                                 </ul>
                               </div>
 
                               <div className="space-y-4 mb-6">
-                                <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/contatos.png", i18n.t('text.contacts'))}>
+                                <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/contatos.webp", t('text.contacts'))}>
                                   <OptimizedImage
-                                    src="/imagens/contatos.png"
-                                    alt={i18n.t('text.contacts')}
+                                    src="/imagens/contatos.webp"
+                                    alt={t('text.contacts')}
                                     className="w-full h-auto wide-image-hover"
                                     loading="lazy"
                                     style={{ imageRendering: 'auto' }}
                                   />
                                 </div>
                                 <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                                  {i18n.t('text.contacts_screen_caption')}
+                                  {t('text.contacts_screen_caption')}
                                 </p>
-                                <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/contatos-filtros.png", i18n.t('text.contacts_filters'))}>
+                                <div className="overflow-hidden cursor-pointer" onClick={() => openImageModal("/imagens/contatos-filtros.webp", t('text.contacts_filters'))}>
                                   <OptimizedImage
-                                    src="/imagens/contatos-filtros.png"
-                                    alt={i18n.t('text.contacts_filters')}
+                                    src="/imagens/contatos-filtros.webp"
+                                    alt={t('text.contacts_filters')}
                                     className="w-full h-auto wide-image-hover"
                                     loading="lazy"
                                     style={{ imageRendering: 'auto' }}
                                   />
                                 </div>
                                 <p className="text-sm glass-text-secondary text-left mt-3 italic">
-                                  {i18n.t('text.contacts_filters_screen_caption')}
+                                  {t('text.contacts_filters_screen_caption')}
                                 </p>
                               </div>
                             </div>
@@ -1080,9 +1081,9 @@ const SelectedWork = () => {
 
                             {/* Impacto Real */}
                             <div>
-                              <h5 className="text-2xl font-bold glass-text-accent mb-6">{i18n.t('text.real_impact_title')}</h5>
+                              <h5 className="text-2xl font-bold glass-text-accent mb-6">{t('text.real_impact_title')}</h5>
                               <p className="text-lg glass-text-secondary leading-relaxed mb-8">
-                                {i18n.t('text.implementation_impact')}
+                                {t('text.implementation_impact')}
                               </p>
                               
                               {/* Métricas Destacadas */}
@@ -1090,30 +1091,30 @@ const SelectedWork = () => {
                                 {/* Métrica 1 */}
                                 <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 backdrop-blur-sm p-6 rounded-xl border border-blue-400/30 text-center hover:scale-105 transition-transform duration-300">
                                   <div className="text-4xl font-bold text-blue-400 mb-3">📉 40%</div>
-                                  <h6 className="font-semibold glass-text mb-2 text-lg">{i18n.t('text.list_reduction')}</h6>
-                                  <p className="text-sm glass-text-secondary">{i18n.t('text.list_reduction_description')}</p>
+                                  <h6 className="font-semibold glass-text mb-2 text-lg">{t('text.list_reduction')}</h6>
+                                  <p className="text-sm glass-text-secondary">{t('text.list_reduction_description')}</p>
                                 </div>
 
                                 {/* Métrica 2 */}
                                 <div className="bg-gradient-to-br from-green-500/20 to-green-600/20 backdrop-blur-sm p-6 rounded-xl border border-green-400/30 text-center hover:scale-105 transition-transform duration-300">
                                   <div className="text-4xl font-bold text-green-400 mb-3">📈 30%</div>
-                                  <h6 className="font-semibold glass-text mb-2 text-lg">{i18n.t('text.high_fashion')}</h6>
-                                  <p className="text-sm glass-text-secondary">{i18n.t('text.high_fashion_description')}</p>
+                                  <h6 className="font-semibold glass-text mb-2 text-lg">{t('text.high_fashion')}</h6>
+                                  <p className="text-sm glass-text-secondary">{t('text.high_fashion_description')}</p>
                                 </div>
 
                                 {/* Métrica 3 */}
                                 <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/20 backdrop-blur-sm p-6 rounded-xl border border-purple-400/30 text-center hover:scale-105 transition-transform duration-300">
                                   <div className="text-4xl font-bold text-purple-400 mb-3">🚀 90%</div>
-                                  <h6 className="font-semibold glass-text mb-2 text-lg">{i18n.t('text.popular_fashion')}</h6>
-                                  <p className="text-sm glass-text-secondary">{i18n.t('text.popular_fashion_description')}</p>
+                                  <h6 className="font-semibold glass-text mb-2 text-lg">{t('text.popular_fashion')}</h6>
+                                  <p className="text-sm glass-text-secondary">{t('text.popular_fashion_description')}</p>
                                 </div>
                               </div>
 
                               {/* Resumo dos Resultados */}
                               <div className="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 backdrop-blur-sm p-8 rounded-xl border border-emerald-400/20 mb-6">
-                                <h6 className="text-xl font-bold glass-text-accent mb-4">{i18n.t('text.transformative_results')}</h6>
+                                <h6 className="text-xl font-bold glass-text-accent mb-4">{t('text.transformative_results')}</h6>
                                 <p className="text-base glass-text-secondary leading-relaxed">
-                                    {i18n.t('text.results_summary')}
+                                    {t('text.results_summary')}
                                 </p>
                               </div>
                             </div>
@@ -1177,7 +1178,7 @@ const SelectedWork = () => {
                     {caseStudy.id === 'study-cases' && (
                       <div className="flex items-center justify-center min-h-[400px]">
                         <h4 className="text-3xl font-bold glass-text-accent text-center">
-                          {i18n.t('text.under_development')}
+                          {t('text.under_development')}
                         </h4>
                       </div>
                     )}
@@ -1187,10 +1188,10 @@ const SelectedWork = () => {
                       <button
                         onClick={() => toggleCase(caseStudy.id)}
                         className="inline-flex items-center gap-3 px-6 py-3 text-base font-medium text-gray-700 border-2 border-gray-300 rounded-full bg-white hover:bg-gray-50 hover:border-gray-400 transition-colors duration-200"
-                        aria-label={i18n.t('text.close_details')}
+                        aria-label={t('text.close_details')}
                       >
                         <X className="w-5 h-5" />
-                        {i18n.t('text.close_details')}
+                        {t('text.close_details')}
                       </button>
                     </div>
                   </div>
@@ -1212,7 +1213,7 @@ const SelectedWork = () => {
             <button
               onClick={closeImageModal}
               className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 transition-all duration-200"
-              aria-label={i18n.t('text.close_image')}
+              aria-label={t('text.close_image')}
             >
               <X className="w-6 h-6" />
             </button>

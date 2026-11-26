@@ -50,7 +50,7 @@ const dashSVG = `<svg width="1600" height="1000" xmlns="http://www.w3.org/2000/s
   <rect width="1600" height="86" fill="${NAVY}"/>
   <rect x="40" y="28" width="14" height="30" rx="3" fill="${RED}"/>
   ${txt(70, 52, 'Ranking de Meritocracia — Cobrança Varejo', 30, WHITE, 'bold')}
-  ${txt(1560, 52, 'Competência 06/2025 · atualizado hoje 07:12', 20, '#9db2d4', 'normal', 'end')}
+  ${txt(1560, 52, 'Competência 06/2025 · atualizado hoje 18:05 · dados até D-1', 20, '#9db2d4', 'normal', 'end')}
   ${[
     ['Atingimento médio', '92,4%', '▲ +4,1 p.p. vs mês anterior', GREEN],
     ['Valor recuperado', 'R$ 48,2 mi', '▲ +12% vs meta parcial', GREEN],
@@ -102,7 +102,7 @@ const archSVG = `<svg width="1600" height="720" xmlns="http://www.w3.org/2000/sv
   ${[
     [40, 'Fontes operacionais', ['Base de cobrança', 'Acordos e promessas', 'Pagamentos'], '#475569'],
     [360, 'Databricks', ['Queries SQL', 'Views sumarizadas', 'Regras de apuração'], '#7c3aed'],
-    [680, 'Modelo dimensional', ['Fato atingimento', 'dim_eps · dim_produto', 'dim_pesos · dim_data'], '#0e7490'],
+    [680, 'Modelo dimensional', ['Fato atingimento', 'dim_empresa · dim_segmento', 'dim_indicador · dim_data'], '#0e7490'],
     [1000, 'Power BI', ['Medidas DAX', 'Visuais do ranking', 'Painel gerencial'], '#b45309'],
     [1320, 'Distribuição diária', ['Power Automate', 'Exportação de PDFs', 'Envio às 9 EPs'], '#15803d']
   ].map(bx => {
@@ -117,7 +117,7 @@ const archSVG = `<svg width="1600" height="720" xmlns="http://www.w3.org/2000/sv
   <rect x="280" y="450" width="1040" height="150" rx="14" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="2"/>
   ${txt(800, 500, 'Automação com gatilho de recorrência diária (Power Automate + Microsoft Fabric)', 25, '#065f46', 'bold', 'middle')}
   ${txt(800, 545, 'Ciclo completo: atualização do painel (~10 min) + exportação automática (~7 min) + conferência humana', 22, '#065f46', 'normal', 'middle')}
-  ${txt(800, 585, 'Resultado: relatório nas caixas das EPs toda manhã — antes levava ate 2 dias e saia 2x por semana', 22, '#065f46', '600', 'middle')}
+  ${txt(800, 585, 'Resultado: relatório enviado ao final de cada dia, com dados D-1 — antes saía só 2x por semana', 22, '#065f46', '600', 'middle')}
   ${txt(1560, 700, 'ESQUEMA SIMPLIFICADO — SEM DETALHES TÉCNICOS INTERNOS', 17, '#94a3b8', 'normal', 'end')}
 </svg>`;
 
@@ -131,22 +131,22 @@ const beforeSVG = `<svg width="1600" height="720" xmlns="http://www.w3.org/2000/
     'Extração manual em SAS via SQL',
     'Planilhas sumarizadas montadas à mão',
     'Envio apenas 2x por semana',
-    'Até 2 dias de atraso nos resultados',
+    'Defasagem de até 4 dias nos resultados',
     'EPs trabalhando às cegas, sem recalcular abordagem'
   ].map((l, i) => txt(110, 250 + i * 66, 'X   ' + l, 24, '#7f1d1d')).join('')}
   <rect x="110" y="560" width="600" height="54" rx="27" fill="#fee2e2"/>
-  ${txt(410, 596, 'Ciclo total: até 2 dias', 26, '#991b1b', 'bold', 'middle')}
+  ${txt(410, 596, '2x por semana · dados com até 4 dias de defasagem', 26, '#991b1b', 'bold', 'middle')}
   <rect x="840" y="120" width="700" height="520" rx="16" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="2"/>
   ${txt(1190, 180, 'DEPOIS — pipeline automatizado', 28, '#065f46', 'bold', 'middle')}
   ${[
     'Databricks conectado ao Power BI via ODBC',
     'Views sumarizadas otimizadas (milhares de linhas)',
-    'Atualização diária, toda manhã',
+    'Envio diário ao final do dia (D-1)',
     'Exportação e distribuição via Power Automate',
     'Humano só confere e aprova o envio'
   ].map((l, i) => txt(890, 250 + i * 66, 'OK   ' + l, 24, '#065f46')).join('')}
   <rect x="890" y="560" width="600" height="54" rx="27" fill="#d1fae5"/>
-  ${txt(1190, 596, 'Ciclo total: ~30 minutos · diário', 26, '#065f46', 'bold', 'middle')}
+  ${txt(1190, 596, 'Diário · dados acumulados até ontem (D-1)', 26, '#065f46', 'bold', 'middle')}
   <g transform="translate(770,340)">
     <circle cx="30" cy="30" r="34" fill="${NAVY}"/>
     <path d="M 12 30 L 40 30 M 30 18 L 42 30 L 30 42" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -163,11 +163,11 @@ const schemaSVG = `<svg width="1300" height="900" xmlns="http://www.w3.org/2000/
     `<line x1="${l[0]}" y1="${l[1]}" x2="${l[2]}" y2="${l[3]}" stroke="#94a3b8" stroke-width="3" marker-end="url(#lk)"/>`).join('')}
   <rect x="470" y="380" width="360" height="190" rx="12" fill="${NAVY}"/>
   ${txt(650, 425, 'fato_atingimento', 28, 'white', 'bold', 'middle')}
-  ${['id_ep (FK)','id_produto (FK)','id_peso (FK)','data (FK)','atingimento · valor · promessas'].map((l,i)=>txt(650,470+i*30,l,20,'#c7d5ee','normal','middle')).join('')}
+  ${['id_empresa (FK)','id_segmento (FK)','id_indicador (FK)','data (FK)','atingimento · valor · promessas'].map((l,i)=>txt(650,470+i*30,l,20,'#c7d5ee','normal','middle')).join('')}
   ${[
-    [80, 90, 'dim_eps', ['9 empresas de cobrança','nome · código · carteira']],
-    [940, 90, 'dim_produto', ['segmentos de cobrança','imobiliário · consignado · ...']],
-    [80, 680, 'dim_pesos', ['pesos por indicador','regras de pontuação']],
+    [80, 90, 'dim_empresa', ['empresas de cobrança','nome · código · carteira']],
+    [940, 90, 'dim_segmento', ['segmentos de cobrança','imobiliário · consignado · ...']],
+    [80, 680, 'dim_indicador', ['pesos por indicador','regras de pontuação']],
     [940, 680, 'dim_data', ['calendário','competência · dia útil']]
   ].map(d => {
     const [x, y, t2, lines] = d;

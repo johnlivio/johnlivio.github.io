@@ -179,7 +179,7 @@ function App() {
         <section
           id="home"
           className="relative flex items-center justify-center bg-cover bg-center h-[600px]"
-          style={{ backgroundImage: "url('https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/banner.png?raw=true')" }}
+          style={{ backgroundImage: "url('/imagens/banner.png')" }}
           aria-label="Seção inicial - Apresentação"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm" style={{backdropFilter: 'blur(55%)'}}></div>

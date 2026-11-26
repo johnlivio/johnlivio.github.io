@@ -36,7 +36,7 @@ const bannerSVG = `<svg width="1600" height="1000" xmlns="http://www.w3.org/2000
     <rect x="620" y="440" width="290" height="56" rx="28" fill="none" stroke="#3b5e9e" stroke-width="2"/>
     ${txt(765, 477, 'Power Automate', 28, LIGHT, '600', 'middle')}
   </g>
-  ${txt(1560, 955, 'DADOS FICTICIOS — RECONSTRUÇÃO SEM DADOS REAIS', 20, '#41547a', 'normal', 'end')}
+  ${txt(1560, 955, 'DADOS FICTÍCIOS — RECONSTRUÍDO PARA PORTFÓLIO', 20, '#41547a', 'normal', 'end')}
 </svg>`;
 
 // ---------- 2. DASHBOARD MOCKUP 1600x1000 ----------
@@ -46,6 +46,7 @@ const eps = [
 ];
 const barMaxW = 700, barY0 = 395, barStep = 62;
 const dashSVG = `<svg width="1600" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <defs><filter id="blv" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7"/></filter></defs>
   <rect width="1600" height="1000" fill="#f1f5f9"/>
   <rect width="1600" height="86" fill="${NAVY}"/>
   <rect x="40" y="28" width="14" height="30" rx="3" fill="${RED}"/>
@@ -60,7 +61,9 @@ const dashSVG = `<svg width="1600" height="1000" xmlns="http://www.w3.org/2000/s
     const x = 40 + i * 390;
     return `<rect x="${x}" y="116" width="360" height="150" rx="12" fill="white" stroke="#e2e8f0"/>` +
            txt(x + 28, 162, k[0], 22, '#64748b') +
+           (k[1].includes('R$') ? '<g filter="url(#blv)">' : '') +
            txt(x + 28, 218, k[1], 46, NAVY, 'bold') +
+           (k[1].includes('R$') ? '</g>' : '') +
            txt(x + 28, 250, k[2], 18, k[3], '600');
   }).join('')}
   <rect x="40" y="300" width="990" height="660" rx="12" fill="white" stroke="#e2e8f0"/>
@@ -87,7 +90,7 @@ const dashSVG = `<svg width="1600" height="1000" xmlns="http://www.w3.org/2000/s
            bar(1270, y + 2, s[1] / 130 * 240, 28, s[2], 4) +
            txt(1520, y + 24, s[1] + '%', 19, '#334155', 'bold', 'end');
   }).join('')}
-  ${txt(1560, 985, 'DADOS FICTÍCIOS — MOCKUP RECONSTRUÍDO PARA PORTFÓLIO, SEM INFORMAÇÃO REAL OU SIGILOSA', 17, '#94a3b8', 'normal', 'end')}
+  ${txt(1560, 985, 'DADOS FICTÍCIOS — RECONSTRUÍDO PARA PORTFÓLIO', 17, '#94a3b8', 'normal', 'end')}
 </svg>`;
 
 // ---------- 3. ARCHITECTURE / PIPELINE 1600x720 ----------
@@ -134,8 +137,7 @@ const beforeSVG = `<svg width="1600" height="720" xmlns="http://www.w3.org/2000/
     'Defasagem de até 4 dias nos resultados',
     'EPs trabalhando às cegas, sem recalcular abordagem'
   ].map((l, i) => txt(110, 250 + i * 66, 'X   ' + l, 24, '#7f1d1d')).join('')}
-  <rect x="110" y="560" width="600" height="54" rx="27" fill="#fee2e2"/>
-  ${txt(410, 596, '2x por semana · dados com até 4 dias de defasagem', 26, '#991b1b', 'bold', 'middle')}
+    ${txt(410, 596, '2x por semana · dados com até 4 dias de defasagem', 26, '#991b1b', 'bold', 'middle')}
   <rect x="840" y="120" width="700" height="520" rx="16" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="2"/>
   ${txt(1190, 180, 'DEPOIS — pipeline automatizado', 28, '#065f46', 'bold', 'middle')}
   ${[
@@ -145,13 +147,12 @@ const beforeSVG = `<svg width="1600" height="720" xmlns="http://www.w3.org/2000/
     'Exportação e distribuição via Power Automate',
     'Humano só confere e aprova o envio'
   ].map((l, i) => txt(890, 250 + i * 66, 'OK   ' + l, 24, '#065f46')).join('')}
-  <rect x="890" y="560" width="600" height="54" rx="27" fill="#d1fae5"/>
-  ${txt(1190, 596, 'Diário · dados acumulados até ontem (D-1)', 26, '#065f46', 'bold', 'middle')}
+    ${txt(1190, 596, 'Diário · dados acumulados até ontem (D-1)', 26, '#065f46', 'bold', 'middle')}
   <g transform="translate(770,340)">
     <circle cx="30" cy="30" r="34" fill="${NAVY}"/>
     <path d="M 12 30 L 40 30 M 30 18 L 42 30 L 30 42" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
-  ${txt(1560, 700, 'VALORES APROXIMADOS COM FINS ILUSTRATIVOS — SEM DADOS SIGILOSOS', 17, '#94a3b8', 'normal', 'end')}
+  ${txt(1560, 700, 'VALORES APROXIMADOS COM FINS ILUSTRATIVOS', 17, '#94a3b8', 'normal', 'end')}
 </svg>`;
 
 // ---------- 5. STAR SCHEMA 1300x900 ----------
@@ -177,7 +178,7 @@ const schemaSVG = `<svg width="1300" height="900" xmlns="http://www.w3.org/2000/
            txt(x + 140, y + 32, t2, 23, 'white', 'bold', 'middle') +
            lines.map((l, i) => txt(x + 140, y + 82 + i * 34, l, 19, '#334155', 'normal', 'middle')).join('');
   }).join('')}
-  ${txt(1260, 880, 'NOMES ILUSTRATIVOS — ESTRUTURA REAL É CONFIDENCIAL', 16, '#94a3b8', 'normal', 'end')}
+  ${txt(1260, 880, 'REPRESENTAÇÃO ILUSTRATIVA SIMPLIFICADA', 16, '#94a3b8', 'normal', 'end')}
 </svg>`;
 
 const jobs = [

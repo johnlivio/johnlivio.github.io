@@ -278,7 +278,7 @@ function App() {
                 <div className="relative flex justify-center pb-4">
                   <div className="glass-card w-[120px] h-[120px] p-0 overflow-hidden">
                     <OptimizedImage
-                      src="https://github.com/johnlivio/johnlivio.github.io/blob/main/imagens/yo.jpg?raw=true"
+                      src="/imagens/yo.jpg"
                       alt="John Medeiros - Professional photo"
                       className="w-full h-full object-cover filter grayscale"
                       style={{ imageRendering: 'auto' }}

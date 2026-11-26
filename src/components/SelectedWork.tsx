@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import OptimizedImage from './OptimizedImage';
+import CaseSantander from './CaseSantander';
 import { ChevronDown, ChevronUp, X, Target, Zap } from 'lucide-react';
 
 interface CaseStudy {
@@ -22,6 +23,18 @@ const SelectedWork = () => {
   const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null);
 
   const caseStudies: CaseStudy[] = [
+    {
+      id: 'santander-ranking',
+      title: t('text.santander_case_title'),
+      tags: ['Power BI', 'Databricks', 'Power Automate', 'Data Storytelling'],
+      summary: t('text.santander_case_summary'),
+      image: '/imagens/santander-ranking-banner.webp',
+      overview: {
+        challenge: t('text.sant_context_p1'),
+        solution: t('text.sant_overview_p1'),
+        impact: t('text.sant_impact_p1')
+      }
+    },
     {
       id: 'zax-app',
       title: t('text.zax_case_title'),
@@ -203,7 +216,7 @@ const SelectedWork = () => {
                     <div className="mb-16">
                       <h4 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
                         <Target className="w-6 h-6" />
-                        {caseStudy.id === 'zax-app' ? t('text.zax_app_overview') : caseStudy.id === 'zax360' ? t('text.zax360_overview') : null}
+                        {caseStudy.id === 'zax-app' ? t('text.zax_app_overview') : caseStudy.id === 'zax360' ? t('text.zax360_overview') : caseStudy.id === 'santander-ranking' ? t('text.sant_overview_title') : null}
                       </h4>
                       <div className="bg-gray-50 p-6 rounded-lg mb-6 border border-gray-200">
                         {caseStudy.id === 'zax-app' ? (
@@ -225,6 +238,15 @@ const SelectedWork = () => {
                             </p>
                             <p className="text-base text-gray-600 leading-relaxed">
                               {t('text.learn_more_text')} <a href="https://venda.zaxapp.com.br/360" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-500 underline transition-colors">https://venda.zaxapp.com.br/360</a>
+                            </p>
+                          </>
+                        ) : caseStudy.id === 'santander-ranking' ? (
+                          <>
+                            <p className="text-base text-gray-600 leading-relaxed mb-4">
+                              {t('text.sant_overview_p1')}
+                            </p>
+                            <p className="text-base text-gray-600 leading-relaxed italic text-gray-500">
+                              {t('text.sant_overview_p2')}
                             </p>
                           </>
                         ) : null}
@@ -1181,6 +1203,11 @@ const SelectedWork = () => {
                           {t('text.under_development')}
                         </h4>
                       </div>
+                    )}
+
+                    {/* Caso de Estudo - Santander Ranking */}
+                    {caseStudy.id === 'santander-ranking' && (
+                      <CaseSantander openImageModal={openImageModal} />
                     )}
 
                     {/* Close Button */}

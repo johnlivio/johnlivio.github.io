@@ -102,7 +102,7 @@ const archSVG = `<svg width="1600" height="720" xmlns="http://www.w3.org/2000/sv
   ${[
     [40, 'Fontes operacionais', ['Base de cobrança', 'Acordos e promessas', 'Pagamentos'], '#475569'],
     [360, 'Databricks', ['Queries SQL', 'Views sumarizadas', 'Regras de apuração'], '#7c3aed'],
-    [680, 'Modelo dimensional', ['Fato atingimento', 'dim_empresa · dim_segmento', 'dim_indicador · dim_data'], '#0e7490'],
+    [680, 'Modelo dimensional', ['Fato atingimento', 'empresas · segmentos', 'pesos · calendário'], '#0e7490'],
     [1000, 'Power BI', ['Medidas DAX', 'Visuais do ranking', 'Painel gerencial'], '#b45309'],
     [1320, 'Distribuição diária', ['Power Automate', 'Exportação de PDFs', 'Envio às 9 EPs'], '#15803d']
   ].map(bx => {
@@ -162,13 +162,13 @@ const schemaSVG = `<svg width="1300" height="900" xmlns="http://www.w3.org/2000/
   ${[[470,400,340,170],[830,400,960,170],[470,560,340,730],[830,560,960,730]].map(l =>
     `<line x1="${l[0]}" y1="${l[1]}" x2="${l[2]}" y2="${l[3]}" stroke="#94a3b8" stroke-width="3" marker-end="url(#lk)"/>`).join('')}
   <rect x="470" y="380" width="360" height="190" rx="12" fill="${NAVY}"/>
-  ${txt(650, 425, 'fato_atingimento', 28, 'white', 'bold', 'middle')}
-  ${['id_empresa (FK)','id_segmento (FK)','id_indicador (FK)','data (FK)','atingimento · valor · promessas'].map((l,i)=>txt(650,470+i*30,l,20,'#c7d5ee','normal','middle')).join('')}
+  ${txt(650, 425, 'Fato — Atingimento', 28, 'white', 'bold', 'middle')}
+  ${['chaves das dimensões','atingimento · valor · promessas'].map((l,i)=>txt(650,470+i*30,l,20,'#c7d5ee','normal','middle')).join('')}
   ${[
-    [80, 90, 'dim_empresa', ['empresas de cobrança','nome · código · carteira']],
-    [940, 90, 'dim_segmento', ['segmentos de cobrança','imobiliário · consignado · ...']],
-    [80, 680, 'dim_indicador', ['pesos por indicador','regras de pontuação']],
-    [940, 680, 'dim_data', ['calendário','competência · dia útil']]
+    [80, 90, 'Empresas', ['empresas de cobrança parceiras','nome · código · carteira']],
+    [940, 90, 'Segmentos', ['segmentos de cobrança','imobiliário · consignado · ...']],
+    [80, 680, 'Pesos', ['pesos por indicador','regras de pontuação']],
+    [940, 680, 'Calendário', ['datas e competências','competência · dia útil']]
   ].map(d => {
     const [x, y, t2, lines] = d;
     return `<rect x="${x}" y="${y}" width="280" height="150" rx="12" fill="white" stroke="#cbd5e1" stroke-width="2"/>` +

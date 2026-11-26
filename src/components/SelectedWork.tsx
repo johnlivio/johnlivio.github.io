@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import OptimizedImage from './OptimizedImage';
-import CaseSantander from './CaseSantander';
+import CaseRanking from './CaseRanking';
 import { ChevronDown, ChevronUp, X, Target, Zap } from 'lucide-react';
 
 interface CaseStudy {
@@ -25,14 +25,14 @@ const SelectedWork = () => {
   const caseStudies: CaseStudy[] = [
     {
       id: 'santander-ranking',
-      title: t('text.santander_case_title'),
+      title: t('text.ranking_case_title'),
       tags: ['Power BI', 'Databricks', 'Power Automate', 'Data Storytelling'],
-      summary: t('text.santander_case_summary'),
+      summary: t('text.ranking_case_summary'),
       image: '/imagens/santander-ranking-banner.webp',
       overview: {
-        challenge: t('text.sant_context_p1'),
-        solution: t('text.sant_overview_p1'),
-        impact: t('text.sant_impact_p1')
+        challenge: t('text.rank_context_p1'),
+        solution: t('text.rank_overview_p1'),
+        impact: t('text.rank_impact_p1')
       }
     },
     {
@@ -216,7 +216,7 @@ const SelectedWork = () => {
                     <div className="mb-16">
                       <h4 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
                         <Target className="w-6 h-6" />
-                        {caseStudy.id === 'zax-app' ? t('text.zax_app_overview') : caseStudy.id === 'zax360' ? t('text.zax360_overview') : caseStudy.id === 'santander-ranking' ? t('text.sant_overview_title') : null}
+                        {caseStudy.id === 'zax-app' ? t('text.zax_app_overview') : caseStudy.id === 'zax360' ? t('text.zax360_overview') : caseStudy.id === 'santander-ranking' ? t('text.rank_overview_title') : null}
                       </h4>
                       <div className="bg-gray-50 p-6 rounded-lg mb-6 border border-gray-200">
                         {caseStudy.id === 'zax-app' ? (
@@ -243,10 +243,10 @@ const SelectedWork = () => {
                         ) : caseStudy.id === 'santander-ranking' ? (
                           <>
                             <p className="text-base text-gray-600 leading-relaxed mb-4">
-                              {t('text.sant_overview_p1')}
+                              {t('text.rank_overview_p1')}
                             </p>
                             <p className="text-base text-gray-600 leading-relaxed italic text-gray-500">
-                              {t('text.sant_overview_p2')}
+                              {t('text.rank_overview_p2')}
                             </p>
                           </>
                         ) : null}
@@ -1205,9 +1205,9 @@ const SelectedWork = () => {
                       </div>
                     )}
 
-                    {/* Caso de Estudo - Santander Ranking */}
+                    {/* Case Study - Meritocracy Ranking */}
                     {caseStudy.id === 'santander-ranking' && (
-                      <CaseSantander openImageModal={openImageModal} />
+                      <CaseRanking openImageModal={openImageModal} />
                     )}
 
                     {/* Close Button */}

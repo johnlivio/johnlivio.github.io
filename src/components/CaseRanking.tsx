@@ -8,11 +8,11 @@ interface CaseRankingProps {
 const CaseRanking = ({ openImageModal }: CaseRankingProps) => {
   const { t } = useTranslation();
 
-  const sectionTitle = 'text-xl font-semibold text-gray-800 mb-4';
-  const paragraph = 'text-base text-gray-600 leading-relaxed';
+  const sectionTitle = 'text-xl font-semibold glass-text mb-4';
+  const paragraph = 'text-base glass-text-secondary leading-relaxed';
   const separator = (
     <div className="flex justify-center my-8">
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+      <div className="glass-separator"></div>
     </div>
   );
 
@@ -27,7 +27,7 @@ const CaseRanking = ({ openImageModal }: CaseRankingProps) => {
           style={{ imageRendering: 'auto' }}
         />
       </div>
-      <p className="text-sm text-gray-500 text-left mt-3 italic">{t(captionKey)}</p>
+      <p className="text-sm glass-text-secondary text-left mt-3 italic">{t(captionKey)}</p>
     </>
   );
 
@@ -96,7 +96,7 @@ const CaseRanking = ({ openImageModal }: CaseRankingProps) => {
         <h5 className={sectionTitle}>{t('text.rank_impact_title')}</h5>
         <p className={`${paragraph} mb-4`}>{t('text.rank_impact_p1')}</p>
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
-          <p className="text-sm text-gray-500 leading-relaxed italic">{t('text.rank_impact_p2')}</p>
+          <p className="text-sm glass-text-secondary leading-relaxed italic">{t('text.rank_impact_p2')}</p>
         </div>
       </div>
     </div>

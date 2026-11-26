@@ -115,7 +115,7 @@ const SelectedWork = () => {
                       />
                     </div>
                     {/* Overlay com título */}
-                    <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
                       <div className="text-white opacity-0 hover:opacity-100 transition-opacity duration-300 text-center">
                         <h3 className="text-2xl font-bold mb-2">
                           {caseStudy.id === 'zax360' ? t('text.commercial_intelligence') : 
@@ -739,7 +739,7 @@ const SelectedWork = () => {
                                 <OptimizedImage
                                   src="/imagens/persona1.webp"
                                   alt={t('text.persona_1_ricardo')}
-                                  className="w-full h-auto object-contain rounded mb-3"
+                                  className="w-full h-auto object-contain rounded-sm mb-3"
                                   loading="lazy"
                                   style={{ imageRendering: 'auto' }}
                                 />
@@ -758,7 +758,7 @@ const SelectedWork = () => {
                                 <OptimizedImage
                                   src="/imagens/persona2.webp"
                                   alt={t('text.persona_2_camila')}
-                                  className="w-full h-auto object-contain rounded mb-3"
+                                  className="w-full h-auto object-contain rounded-sm mb-3"
                                   loading="lazy"
                                   style={{ imageRendering: 'auto' }}
                                 />
@@ -777,7 +777,7 @@ const SelectedWork = () => {
                                 <OptimizedImage
                                   src="/imagens/persona3.webp"
                                   alt={t('text.persona_3_joao')}
-                                  className="w-full h-auto object-contain rounded mb-3"
+                                  className="w-full h-auto object-contain rounded-sm mb-3"
                                   loading="lazy"
                                   style={{ imageRendering: 'auto' }}
                                 />
@@ -1205,14 +1205,14 @@ const SelectedWork = () => {
       {/* Image Modal */}
       {modalImage && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
           onClick={closeImageModal}
         >
           <div className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center p-4">
             {/* Close Button */}
             <button
               onClick={closeImageModal}
-              className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 transition-all duration-200"
+              className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200"
               aria-label={t('text.close_image')}
             >
               <X className="w-6 h-6" />

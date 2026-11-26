@@ -71,7 +71,7 @@ function App() {
               <div className="relative">
                 <button
                   onClick={() => setLangMenuOpen(!langMenuOpen)}
-                  className="flex items-center space-x-2 glass-text hover:glass-text-accent p-2 rounded-md focus:outline-none"
+                  className="flex items-center space-x-2 glass-text hover:glass-text-accent p-2 rounded-md focus:outline-hidden"
                   aria-label={t('text.aria.select_language')}
                   aria-expanded={langMenuOpen}
                   aria-haspopup="true"
@@ -112,7 +112,7 @@ function App() {
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md glass-text hover:glass-text-accent focus:outline-none"
+                className="inline-flex items-center justify-center p-2 rounded-md glass-text hover:glass-text-accent focus:outline-hidden"
                 aria-label={mobileMenuOpen ? t('text.aria.close_menu') : t('text.aria.open_menu')}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"

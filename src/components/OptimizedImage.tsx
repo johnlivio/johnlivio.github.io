@@ -6,6 +6,8 @@ interface OptimizedImageProps {
   className?: string;
   style?: React.CSSProperties;
   loading?: 'lazy' | 'eager';
+  width?: number;
+  height?: number;
   onLoad?: () => void;
   onError?: () => void;
 }
@@ -16,6 +18,8 @@ export default function OptimizedImage({
   className = '',
   style,
   loading = 'lazy',
+  width,
+  height,
   onLoad,
   onError
 }: OptimizedImageProps) {
@@ -80,6 +84,9 @@ export default function OptimizedImage({
             onLoad={handleLoad}
             onError={handleError}
             loading={loading}
+            decoding="async"
+            width={width}
+            height={height}
           />
         )
       )}

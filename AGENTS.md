@@ -34,5 +34,4 @@ Automático via `.github/workflows/deploy.yml`: todo push na `main` builda e pub
 
 ## Asset generation scripts
 
-- scripts/generate-santander-assets.cjs regenerates the Santander case images (SVG -> sharp -> webp into public/imagens/). Run from repo root: node scripts/generate-santander-assets.cjs. sharp is a devDependency for this.
-- scripts/add-santander-translations.cjs was a one-off key insertion (already applied — do not re-run, would duplicate keys).
+- scripts/generate-ranking-assets.cjs regenerates the meritocracy ranking case images (SVG -> sharp -> webp into public/imagens/). Run from repo root: node scripts/generate-ranking-assets.cjs. sharp is a devDependency for this.

@@ -24,11 +24,11 @@ const SelectedWork = () => {
 
   const caseStudies: CaseStudy[] = [
     {
-      id: 'santander-ranking',
+      id: 'meritocracy-ranking',
       title: t('text.ranking_case_title'),
       tags: ['Power BI', 'Databricks', 'Power Automate', 'Data Storytelling'],
       summary: t('text.ranking_case_summary'),
-      image: '/imagens/santander-ranking-banner.webp',
+      image: '/imagens/ranking-banner.webp',
       overview: {
         challenge: t('text.rank_context_p1'),
         solution: t('text.rank_overview_p1'),
@@ -216,7 +216,7 @@ const SelectedWork = () => {
                     <div className="mb-16">
                       <h4 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
                         <Target className="w-6 h-6" />
-                        {caseStudy.id === 'zax-app' ? t('text.zax_app_overview') : caseStudy.id === 'zax360' ? t('text.zax360_overview') : caseStudy.id === 'santander-ranking' ? t('text.rank_overview_title') : null}
+                        {caseStudy.id === 'zax-app' ? t('text.zax_app_overview') : caseStudy.id === 'zax360' ? t('text.zax360_overview') : caseStudy.id === 'meritocracy-ranking' ? t('text.rank_overview_title') : null}
                       </h4>
                       <div className="bg-gray-50 p-6 rounded-lg mb-6 border border-gray-200">
                         {caseStudy.id === 'zax-app' ? (
@@ -240,7 +240,7 @@ const SelectedWork = () => {
                               {t('text.learn_more_text')} <a href="https://venda.zaxapp.com.br/360" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-500 underline transition-colors">https://venda.zaxapp.com.br/360</a>
                             </p>
                           </>
-                        ) : caseStudy.id === 'santander-ranking' ? (
+                        ) : caseStudy.id === 'meritocracy-ranking' ? (
                           <>
                             <p className="text-base text-gray-600 leading-relaxed mb-4">
                               {t('text.rank_overview_p1')}
@@ -1206,7 +1206,7 @@ const SelectedWork = () => {
                     )}
 
                     {/* Case Study - Meritocracy Ranking */}
-                    {caseStudy.id === 'santander-ranking' && (
+                    {caseStudy.id === 'meritocracy-ranking' && (
                       <CaseRanking openImageModal={openImageModal} />
                     )}
 

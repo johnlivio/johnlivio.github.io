@@ -107,7 +107,7 @@ const archSVG = `<svg width="1600" height="720" xmlns="http://www.w3.org/2000/sv
     [360, 'Databricks', ['Queries SQL', 'Views sumarizadas', 'Regras de apuração'], '#7c3aed'],
     [680, 'Modelo dimensional', ['Fato atingimento', 'empresas · segmentos', 'pesos · calendário'], '#0e7490'],
     [1000, 'Power BI', ['Medidas DAX', 'Visuais do ranking', 'Painel gerencial'], '#b45309'],
-    [1320, 'Distribuição diária', ['Power Automate', 'Exportação de PDFs', 'Envio às 9 EPs'], '#15803d']
+    [1320, 'Distribuição diária', ['Power Automate', 'Exportação de PDFs', 'Envio às EPs'], '#15803d']
   ].map(bx => {
     const [x, title, lines, color] = bx;
     return `<rect x="${x}" y="140" width="240" height="240" rx="14" fill="white" stroke="#e2e8f0" stroke-width="2"/>` +
@@ -182,7 +182,7 @@ const schemaSVG = `<svg width="1300" height="900" xmlns="http://www.w3.org/2000/
 </svg>`;
 
 const jobs = [
-  ['santander-ranking-banner.webp', bannerSVG],
+  ['ranking-banner.webp', bannerSVG],
   ['ranking-dashboard-mockup.webp', dashSVG],
   ['ranking-arquitetura.webp', archSVG],
   ['ranking-antes-depois.webp', beforeSVG],

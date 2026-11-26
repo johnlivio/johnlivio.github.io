@@ -7,7 +7,6 @@ Hospedado no GitHub Pages: https://johnlivio.github.io/
 ## Branches
 - `main` — única branch canônica. Todo trabalho acontece nela.
 - `archive/retro-design` — design retrô antigo, arquivado (não usar como base).
-- `gh-pages` — legado obsoleto do deploy manual; o deploy atual usa GitHub Actions.
 
 ## Comandos
 - `npm install` — instalar dependências (sempre npm, nunca yarn — yarn.lock foi removido)
@@ -20,10 +19,14 @@ Automático via `.github/workflows/deploy.yml`: todo push na `main` builda e pub
 (build_type=workflow). NÃO existe mais deploy manual — basta commitar e dar push.
 
 ## Armadilhas conhecidas
-- Imagens devem ficar em `public/imagens/` e ser referenciadas como `/imagens/nome.jpg`.
+- Imagens ficam em `public/imagens/` no formato WebP, referenciadas como `/imagens/nome.webp`.
+  Exceção: `yo.jpg` permanece JPEG porque og:image precisa de compatibilidade com crawlers.
   NUNCA usar URLs `github.com/.../blob/...?raw=true` — lentas, frágeis e já causaram imagem quebrada em produção.
 - Nunca commitar artefatos de build (`dist/`, `assets/`, `.vite/`) na raiz — uma vez isso fez o
   vite build ignorar todo o código-fonte silenciosamente.
+- i18n: sempre usar `const { t } = useTranslation()` nos componentes — nunca `i18n.t()` direto
+  (não é reativo). O `I18nextProvider` explícito no main.tsx é necessário; sem ele as chaves
+  aparecem crus na UI.
 
 ## Preferências do usuário
 - Idioma: português (PT-BR).
